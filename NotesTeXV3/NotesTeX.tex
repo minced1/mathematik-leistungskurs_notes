@@ -1,6 +1,7 @@
 \documentclass[10pt]{article}
 \usepackage{NotesTeXV3,lipsum}
-%\usepackage{showframe}
+\usepackage[ngerman]{babel}
+
 
 \begin{document}
 	\title{{NotesTeX}\\{\normalsize{\itshape An All-In-One Notes Package For Students}}}
@@ -19,6 +20,13 @@
 	\part{Introduction}
 
 	\section{Required Packages}\label{sec:reqpackages}
+	\begin{equation}
+	\int_0^{\frac{\pi}{2}}
+        \frac{\sqrt{\frac12 \sqrt{\frac{\ln^2\cos\theta}{\theta^2+\ln^2\cos\theta}} + \frac12}}%
+            {\fourthroot{\theta^2 + \ln^2\cos\theta}} \dd{\theta}
+      = \frac{\pi}{2\sqrt{\ln 2}}
+	\end{equation}
+
 	\begin{margintable}\vspace{.8in}\footnotesize
 		\begin{tabularx}{\marginparwidth}{|X}
 		%Section~\ref{sec:motivation}. Motivation\\
@@ -266,7 +274,7 @@
 			$\cdots$\\
 			\texttt{$\backslash$end\{fullpage\}}
 		\end{center}
-		with the width of the \texttt{fullpage} environment given by \texttt{$\backslash$textwidth}+\texttt{$\backslash$marginparsep}+\texttt{$\backslash$marginparwidth}.The code in \texttt{NotesTeX.sty} that is responsible for the \texttt{fullpage} environment is given by
+		with the width of the \texttt{fullpage} environment given by \texttt{$\backslash$textwidth}+\texttt{$\backslash$marginparsep}+\texttt{$\backslash$marginparwidth}. The code in \texttt{NotesTeX.sty} that is responsible for the \texttt{fullpage} environment is given by
 		\begin{verbatim}
 			\newenvironment{fullpage}{
 			{\smallskip\noindent

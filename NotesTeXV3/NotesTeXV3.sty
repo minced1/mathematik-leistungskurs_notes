@@ -64,13 +64,21 @@
 %           User Top Level Packages: Additional & Styling
 % ----------------------------------------------------------------------
 
-\usepackage[T1]{fontenc}                            % Font Styling
-\usepackage{lmodern,mathrsfs}
+%\usepackage[T1]{fontenc}                            % Font Styling
+%\usepackage{lmodern,mathrsfs}
+\usepackage{fontspec}
+
+\usepackage{montserrat}
+\usepackage{tgcursor}
+\setmainfont{Montserrat}
+\setmonofont{TEX Gyre Cursor}
 
 \usepackage[shortlabels]{enumitem}                  % Enumitem Options
 
 \usepackage{mathtools,amsthm,amssymb,amsfonts,bm}   % Math Presets
 \usepackage{thmtools,amsmath}
+\usepackage[mathrm=sym]{unicode-math}
+
 \usepackage{array,tabularx,booktabs}                % Table Presets
 \usepackage{graphicx,wrapfig,float,caption}         % Figure Presets
 \usepackage{setspace,multicol}                      % Text Presets
@@ -80,9 +88,14 @@
 % ----------------------------------------------------------------------
 %           User Page Prefrences 
 % ----------------------------------------------------------------------
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 
-\geometry{paperheight=11in,paperwidth=8.5in,                   %fix paperwidth and height.
+\geometry{paper=a4paper,                   %fix paperwidth and height.
           marginparsep=.02\paperwidth,marginparwidth=.2\paperwidth,
           inner=.11\paperwidth,voffset=-1in,headheight=.02\paperheight,
           headsep=.03\paperheight,footskip=20pt,
@@ -121,7 +134,7 @@
 \newlength{\spacelength}
 \settowidth{\spacelength}{\normalfont\ }
 \declaretheoremstyle[
-    headfont={\bfseries\sffamily\footnotesize},
+    headfont={\footnotesize},
     notefont={\normalfont},
     bodyfont={\normalfont},
     headpunct={\relax},%\newline,
@@ -247,7 +260,7 @@
 \renewcommand*{\raggedrightmarginnote}{\noindent}
 \newcommand{\mn}[1]{\textsuperscript{\thesidenote}{}\marginnote{\textsuperscript{\thesidenote}{}\itshape\footnotesize #1}\refstepcounter{sidenote}}
 \newcommand{\en}[1]{\marginnote{\footnotesize{#1}}}
-\newcommand{\lec}[2]{{\setlength{\marginparwidth}{.07\paperwidth}\reversemarginpar\marginnote{\centering\footnotesize{\textsf{\bfseries #1}}\\#2}}}
+\newcommand{\lec}[2]{{\setlength{\marginparwidth}{.07\paperwidth}\reversemarginpar\marginnote{\centering\footnotesize{\bfseries #1}\\#2}}}
 \newcommand{\sn}[1]{\sidenote{\itshape\footnotesize #1}}
 
 % ----------------------------------------------------------------------
@@ -339,7 +352,7 @@
 \ifnum\theemail@counter>0\email@toks=\expandafter{\the\email@toks, \@email{#1}}%
 \else\email@toks=\expandafter{\the\email@toks\@email{#1}}%
 \fi\stepcounter{email@counter}}
-\newcommand{\@email}[1]{\href{mailto:#1}{\tt #1}}
+\newcommand{\@email}[1]{\href{mailto:#1}{\ttfamily #1}}
 
 
 % Collaboration macros
@@ -386,10 +399,10 @@
 \if!\@subheader!\else\noindent{\trfont{\@subheader}}\fi
 \afterSubheaderSpace
 % Proceedings
-\if!\@proceeding!\else\noindent{\sc\@proceeding}\fi
+\if!\@proceeding!\else\noindent{\scshape\@proceeding}\fi
 \afterProceedingsSpace
 % Title
-{\huge\centering\sffamily\bfseries\sc\@title\par}
+{\huge\centering\bfseries\scshape\@title\par}
 \afterTitleSpace
 % Rule
 {\color{Maroon}\hrule height .6\p@}%
@@ -408,7 +421,7 @@
 \fi
 % Author
 %{\bfseries\raggedright\sffamily\the\auth@toks\par}
-{\bfseries\raggedright\sffamily\sc\the\auth@toks\par}
+{\bfseries\raggedright\scshape\the\auth@toks\par}
 \afterAuthorSpace
 % Affiliation
 \ifaffil\begin{list}{}{%
