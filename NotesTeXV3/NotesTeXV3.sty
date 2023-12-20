@@ -463,14 +463,24 @@
 
 \renewcommand{\cfttoctitlefont}{\Large\sffamily\bfseries}
 
+% \renewcommand{\cftpartnumwidth}{3em}
+% \renewcommand{\cftpartpresnum}{\hfill}% Right-align
+% \renewcommand{\cftpartaftersnum}{}% Remove \hfil after number
+% \renewcommand{\cftpartaftersnumb}{\hspace{1em}}% Space between number and section title
 \renewcommand{\cftpartfont}{\sffamily\bfseries\scshape}
 \renewcommand{\cftpartpagefont}{\sffamily\bfseries\scshape}
 \renewcommand{\cftpartdotsep}{\cftnodots}
 
+\renewcommand{\cftsecpresnum}{\hfill}% Right-align
+\renewcommand{\cftsecaftersnum}[1]{}% Remove \hfil after number
+\renewcommand{\cftsecaftersnumb}{\hspace{1em}}% Space between number and section title
 \renewcommand{\cftsecfont}{\sffamily}
 \renewcommand{\cftsecpagefont}{\sffamily}
 \renewcommand{\cftsecdotsep}{\cftnodots}
 
+\renewcommand{\cftsubsecpresnum}{\hfill}% Right-align
+\renewcommand{\cftsubsecaftersnum}[1]{}% Remove \hfil after number
+\renewcommand{\cftsubsecaftersnumb}{\hspace{1em}}% Space between number and section title
 \renewcommand{\cftsubsecfont}{\footnotesize\sffamily}
 \renewcommand{\cftsubsecpagefont}{\footnotesize\sffamily}
 \renewcommand{\cftsubsecdotsep}{\cftnodots}
@@ -528,7 +538,7 @@
 % just after ``\begin{document}''
 \newcommand\ps@myplain{
 \pagenumbering{arabic}
-\renewcommand\@oddfoot{\hfill-- \thepage\ --\hfill}
+% \renewcommand\@oddfoot{\hfill-- \thepage\ --\hfill}
 \renewcommand\@oddhead{}}
 \let\ps@plain=\ps@myplain
 
@@ -593,10 +603,11 @@
 %   {\color{black}\thepart}
 %   \end{center}}[-.95in]}{0pt}{\Huge\bfseries\itshape}
 
+%\renewcommand\thepart{\arabic{part}}
 \titleformat{\part}[hang]{{\thispagestyle{fancypart}}\Huge\bfseries}{\marginnote{
 \begin{tcolorbox}[width=\marginparwidth,height=\marginparwidth/2,colback=black!50!white,colframe=black!50!white,center title,fonttitle=\sffamily\bfseries\normalsize,title=PART,text fill]
   \begin{center}
-  {\color{white}\thepart}
+  {\sffamily\color{white}\thepart}
   \end{center}
 \end{tcolorbox}
 }[-1.25in]}{0pt}{\sffamily\Huge\bfseries\scshape}
@@ -618,10 +629,6 @@
     \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
   \fi
   \vskip\belowcaptionskip}
-
-
-
-
 
 %apply some formatting on the biblio
 %without redefining the whole env
