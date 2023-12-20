@@ -38,14 +38,32 @@
 \ProcessOptions\relax
 
 \ifnatbibsort\RequirePackage[numbers,sort&compress]{natbib}\else\RequirePackage[numbers,compress]{natbib}\fi
-\RequirePackage{color}
+\RequirePackage[usenames, dvipsnames, hyperref]{xcolor}
+
+%% the color profile
+% #1: primary, #2: secondary, #3: alerted
+\newcommand*\SetColorProfile{%
+\@ifstar\ntex@SetColorProfile\ntex@SetColorProfile@define
+}
+\def\ntex@SetColorProfile#1#2#3{%
+\colorlet{ntex@color@primary}{#1}\colorlet{ntex@color@secondary}{#2}\colorlet{ntex@color@alerted}{#3}%
+}
+
+\def\ntex@SetColorProfile@define#1#2#3{%
+\definecolor{ntex@color@primary}{RGB}{#1}%
+\definecolor{ntex@color@secondary}{RGB}{#2}%
+\definecolor{ntex@color@alerted}{RGB}{#3}%
+}
+
+\SetColorProfile{154, 49, 54}{249, 224, 176}{137,64,75}
+
 \RequirePackage[colorlinks=true
-,urlcolor=Maroon
-,anchorcolor=Maroon
-,citecolor=Maroon
-,filecolor=Maroon
-,linkcolor=Maroon
-,menucolor=Maroon
+,urlcolor=ntex@color@primary
+,anchorcolor=ntex@color@primary
+,citecolor=ntex@color@primary
+,filecolor=ntex@color@primary
+,linkcolor=ntex@color@primary
+,menucolor=ntex@color@primary
 ,linktocpage=true
 ,pdfproducer=medialab
 ,pdfa=true
@@ -57,7 +75,7 @@
 % ----------------------------------------------------------------------
 
 \usepackage{marginnote,sidenotes,fancyhdr,geometry}
-\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[usenames, dvipsnames, hyperref]{xcolor}
 \usepackage[many]{tcolorbox}
 
 % ----------------------------------------------------------------------
@@ -78,6 +96,7 @@
 \usepackage{mathtools,amsthm,amssymb,amsfonts,bm}   % Math Presets
 \usepackage{thmtools,amsmath}
 \usepackage{unicode-math}
+%\setmathfont{TEX Gyre Pagella Math}
 
 \usepackage{array,tabularx,booktabs}                % Table Presets
 \usepackage{graphicx,wrapfig,float,caption}         % Figure Presets
@@ -405,7 +424,7 @@
 {\huge\centering\sffamily\bfseries\scshape\@title\par}
 \afterTitleSpace
 % Rule
-{\color{Maroon}\hrule height .6\p@}%
+{\color{ntex@color@primary}\hrule height .6\p@}%
 \afterRuleSpace
 % Collaboration
 \if!\@collaboration!\else
@@ -496,7 +515,6 @@
 \pagestyle{myplain}\pagenumbering{arabic}
 } % close the \renewcommand\maketitle{
 
-
 % Page layout
 \renewcommand{\baselinestretch}{1.0}\normalsize
 \setlength\lineskip{1\p@}
@@ -538,7 +556,7 @@
 % just after ``\begin{document}''
 \newcommand\ps@myplain{
 \pagenumbering{arabic}
-% \renewcommand\@oddfoot{\hfill-- \thepage\ --\hfill}
+%\renewcommand\@oddfoot{\hfill-- \thepage\ --\hfill}
 \renewcommand\@oddhead{}}
 \let\ps@plain=\ps@myplain
 
@@ -581,7 +599,7 @@
 {\footnotesize\textsc{Section \thesection}}
 {0pt}
 {\Large\bfseries}
-[\vspace{-10pt}\color{Maroon}\rule{\textwidth}{.6pt}]
+[\vspace{-10pt}\color{ntex@color@primary}\rule{\textwidth}{.6pt}]
 
 \titleformat{name=\section,numberless}[hang]
 {\sffamily}
@@ -594,7 +612,7 @@
 {\footnotesize\textsc{Subsection \thesubsection}}
 {0pt}
 {\large\bfseries}
-[\vspace{-5pt}\color{Maroon}\rule{\textwidth}{.6pt}]
+[\vspace{-5pt}\color{ntex@color@primary}\rule{\textwidth}{.6pt}]
 
 % \titleformat{name=\part}[hang]
 % {{\thispagestyle{fancypart}}\Huge\bfseries}
@@ -603,8 +621,7 @@
 %   {\color{black}\thepart}
 %   \end{center}}[-.95in]}{0pt}{\Huge\bfseries\itshape}
 
-%\renewcommand\thepart{\arabic{part}}
-\titleformat{\part}[hang]{{\thispagestyle{fancypart}}\Huge\bfseries}{\marginnote{
+\titleformat{\part}[hang]{\setcounter{section}{0}{\thispagestyle{fancypart}}\Huge\bfseries}{\marginnote{
 \begin{tcolorbox}[width=\marginparwidth,height=\marginparwidth/2,colback=black!50!white,colframe=black!50!white,center title,fonttitle=\sffamily\bfseries\normalsize,title=PART,text fill]
   \begin{center}
   {\sffamily\color{white}\thepart}
