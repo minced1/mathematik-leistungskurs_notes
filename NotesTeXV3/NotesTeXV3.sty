@@ -46,16 +46,16 @@
 \@ifstar\ntex@SetColorProfile\ntex@SetColorProfile@define
 }
 \def\ntex@SetColorProfile#1#2#3{%
-\colorlet{ntex@color@primary}{#1}\colorlet{ntex@color@secondary}{#2}\colorlet{ntex@color@alerted}{#3}%
+\colorlet{ntex@color@primary}{#1}\colorlet{ntex@color@secondary}{#2}\colorlet{ntex@color@tertiary}{#3}%
 }
 
 \def\ntex@SetColorProfile@define#1#2#3{%
-\definecolor{ntex@color@primary}{RGB}{#1}%
-\definecolor{ntex@color@secondary}{RGB}{#2}%
-\definecolor{ntex@color@alerted}{RGB}{#3}%
+\definecolor{ntex@color@primary}{HTML}{#1}%
+\definecolor{ntex@color@secondary}{HTML}{#2}%
+\definecolor{ntex@color@tertiary}{HTML}{#3}%
 }
 
-\SetColorProfile{154, 49, 54}{249, 224, 176}{137,64,75}
+\SetColorProfile{9A3136}{BC7A7D}{8AA0AA}
 
 \RequirePackage[colorlinks=true
 ,urlcolor=ntex@color@primary
@@ -102,15 +102,67 @@
 \usepackage{graphicx,wrapfig,float,caption}         % Figure Presets
 \usepackage{setspace,multicol}                      % Text Presets
 \usepackage{tikz,physics}                           % Physics Presets
-
+\usepackage{listings}
+\lstset{
+basicstyle = \ttfamily,
+rulecolor = \color{black},
+frame = leftline,
+framerule = 0.6pt,
+xleftmargin= 16pt,
+xrightmargin= 0pt,
+numbers = left,
+numbersep = 7pt,
+numberstyle = \ttfamily\footnotesize,
+%backgroundcolor=\color{gray!10!white},
+extendedchars = true,
+captionpos=b,
+keywordstyle = \bfseries\color{ntex@color@primary},
+keywordstyle = [2]\color{ntex@color@secondary},
+stringstyle = \color{ntex@color@tertiary},
+showstringspaces=false,
+commentstyle = \color{gray}\itshape,
+breakatwhitespace=false,
+breaklines=true,
+postbreak=\mbox{\textcolor{gray}{$\hookrightarrow$}\space},
+showspaces=false,
+keepspaces=true,
+showtabs=false,
+tabsize=2,
+}
+\lstdefinestyle{standalone}{
+basicstyle = \ttfamily,
+rulecolor = \color{gray!30!white},
+frame = leftline,
+framerule = 1pt,
+xleftmargin= 4pt,
+xrightmargin= 0pt,
+numbers = left,
+numbersep = 7pt,
+numberstyle = \ttfamily\footnotesize,
+backgroundcolor=\color{gray!10!white},
+extendedchars = true,
+captionpos=b,
+keywordstyle = \bfseries\color{ntex@color@primary},
+keywordstyle = [2]\color{ntex@color@secondary},
+stringstyle = \color{ntex@color@tertiary},
+showstringspaces=false,
+commentstyle = \color{gray}\itshape,
+breakatwhitespace=false,
+breaklines=true,
+postbreak=\mbox{\textcolor{gray}{$\hookrightarrow$}\space},
+showspaces=false,
+keepspaces=true,
+showtabs=false,
+tabsize=2,
+}
 
 % ----------------------------------------------------------------------
 %           User Page Prefrences
 % ----------------------------------------------------------------------
-\tolerance=1
-\emergencystretch=\maxdimen
-\hyphenpenalty=10000
-\hbadness=10000
+% \tolerance=1
+% \emergencystretch=\maxdimen
+% \hyphenpenalty=10000
+% \hbadness=10000
 
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 
