@@ -45,17 +45,19 @@
 \newcommand*\SetColorProfile{%
 \@ifstar\ntex@SetColorProfile\ntex@SetColorProfile@define
 }
-\def\ntex@SetColorProfile#1#2#3{%
-\colorlet{ntex@color@primary}{#1}\colorlet{ntex@color@secondary}{#2}\colorlet{ntex@color@tertiary}{#3}%
+\def\ntex@SetColorProfile#1#2#3#4#5{%
+\colorlet{ntex@color@primary}{#1}\colorlet{ntex@color@secondary}{#2}\colorlet{ntex@color@tertiary}{#3}\colorlet{ntex@color@quaternary}{#4}\colorlet{ntex@color@quinary}{#5}%
 }
 
-\def\ntex@SetColorProfile@define#1#2#3{%
+\def\ntex@SetColorProfile@define#1#2#3#4#5{%
 \definecolor{ntex@color@primary}{HTML}{#1}%
 \definecolor{ntex@color@secondary}{HTML}{#2}%
 \definecolor{ntex@color@tertiary}{HTML}{#3}%
+\definecolor{ntex@color@quaternary}{HTML}{#4}%
+\definecolor{ntex@color@quinary}{HTML}{#5}%
 }
 
-\SetColorProfile{9A3136}{BC7A7D}{8AA0AA}
+\SetColorProfile{9A3136}{9D6669}{999731}{317499}{A1B8C5}
 
 \RequirePackage[colorlinks=true
 ,urlcolor=ntex@color@primary
@@ -107,7 +109,7 @@
 basicstyle = \ttfamily,
 rulecolor = \color{black},
 frame = leftline,
-framerule = 0.6pt,
+framerule = 0.4pt,
 xleftmargin= 16pt,
 xrightmargin= 0pt,
 numbers = left,
