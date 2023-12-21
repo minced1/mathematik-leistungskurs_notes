@@ -4,7 +4,6 @@
 
 \usepackage[ngerman]{babel}
 
-
 \begin{document}
 	\title{{Notes\TeX}\\{\normalsize{\itshape An All-In-One Notes Package For Students}}}
 	\author{Aditya Dhumuntarao}
@@ -234,6 +233,7 @@
 			  breakable,
 			}
 		\end{verbatim}
+		\qed
 	\end{proof}
 	\begin{example}
 		The \texttt{example} environment and the associated \texttt{tcolorbox} are provided by the following code in \texttt{NotesTeX.sty}:
@@ -299,6 +299,7 @@
 	\end{fullpage}
 
 	\subsection{Known Issues with Fullpage}\label{Sub: Fullpage_Issues}
+
 	\begin{remark}
 		Since the \texttt{fullpage} environment uses a \texttt{minipage}, and minipages do not work over multiple pages, one will need a new \texttt{fullpage} per page.	
 	\end{remark}

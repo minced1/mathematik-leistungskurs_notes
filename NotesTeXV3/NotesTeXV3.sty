@@ -210,9 +210,12 @@
         \makebox[0pt][r]{\NAME\hspace{\marginparsep}}\hskip-\spacelength{\NOTE}},
 ]{claim}
 
-\declaretheorem[
-    style=proof,
-    qed=\qedsymbol]{proof}
+% \declaretheorem[
+%     style=proof,
+%     qed=\qedsymbol]{proof}
+
+\theoremstyle{proof}
+\newtheorem{proof}{Beweis}
 
 \declaretheorem[style=claim]{Intuition}
 
@@ -255,13 +258,13 @@
 \newtheorem{intu}{Intuition}
 
 \theoremstyle{claim}
-\newtheorem{solu}{Solution}
+\newtheorem{solu}{Lösung}
 
 \theoremstyle{claim}
-\newtheorem{remark}{Remark}
+\newtheorem{remark}{Anmerkung}
 
 \theoremstyle{claim}
-\newtheorem{example}{Example}
+\newtheorem{example}{Beispiel}
 \tcolorboxenvironment{example}{
   boxrule=0pt,
   boxsep=0pt,
@@ -461,7 +464,7 @@
 \end{flushleft}
 \end{minipage}
 \else %% if emailaddfalse do nothing
-\PackageWarningNoLine{\jname}{E-mails are missing.\MessageBreak Plese use \protect\emailAdd\space macro to provide e-mails.}
+\PackageWarningNoLine{\jname}{E-mails are missing.\MessageBreak Please use \protect\emailAdd\space macro to provide e-mails.}
 \fi
 \afterEmailSpace
 %Erratum or addendum
@@ -566,6 +569,8 @@
 \newcommand\ps@titlepage{\renewcommand\@oddfoot{}\renewcommand\@oddhead{}}
 
 %number equations after the sections
+\newtagform{braces}{\sffamily(}{)}
+\usetagform{braces}
 \renewcommand{\theequation}{\thesection.\arabic{equation}}
 \numberwithin{equation}{section}
 
@@ -596,7 +601,7 @@
 
 \titleformat{name=\section}[display]
 {\sffamily}
-{\footnotesize\textsc{Section \thesection}}
+{\footnotesize\textsc{Abschnitt \thesection}}
 {0pt}
 {\Large\bfseries}
 [\vspace{-10pt}\color{ntex@color@primary}\rule{\textwidth}{.6pt}]
@@ -609,7 +614,7 @@
 
 \titleformat{name=\subsection}[display]
 {\sffamily}
-{\footnotesize\textsc{Subsection \thesubsection}}
+{\footnotesize\textsc{Unterabschnitt \thesubsection}}
 {0pt}
 {\large\bfseries}
 [\vspace{-5pt}\color{ntex@color@primary}\rule{\textwidth}{.6pt}]
@@ -622,7 +627,7 @@
 %   \end{center}}[-.95in]}{0pt}{\Huge\bfseries\itshape}
 
 \titleformat{\part}[hang]{\setcounter{section}{0}{\thispagestyle{fancypart}}\Huge\bfseries}{\marginnote{
-\begin{tcolorbox}[width=\marginparwidth,height=\marginparwidth/2,colback=black!50!white,colframe=black!50!white,center title,fonttitle=\sffamily\bfseries\normalsize,title=PART,text fill]
+\begin{tcolorbox}[width=\marginparwidth,height=\marginparwidth/2,colback=black!50!white,colframe=black!50!white,center title,fonttitle=\sffamily\bfseries\normalsize,title=TEIL,text fill]
   \begin{center}
   {\sffamily\color{white}\thepart}
   \end{center}
