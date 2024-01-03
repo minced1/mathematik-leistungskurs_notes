@@ -1,7 +1,9 @@
+% arara: lualatex: {options: ['--output-directory=./build']}
 \documentclass[10pt]{article}
 \usepackage{NotesTeXV3,lipsum}
 % \SetColorProfile{9A3136}{9D6669}{999731}{317499}{A1B8C5}
 \usepackage[ngerman]{babel}
+
 
 \begin{document}
 	\title{{Notes\TeX}\\{\normalsize{\itshape An All-In-One Notes Package For Students}}}
@@ -10,7 +12,7 @@
 	PhD. Student at the University of Minnesota\\
 	\href{https://adhumunt.github.io/}{Website}\\
 	\href{https://inspirehep.net/authors/1669979}{Inspire-HEP}\\
-	\href{https://www.linkedin.com/in/aditya-dhumuntarao-80a0b8112/}{LinkedIn}\\
+	\href{https://www.linkedin.com/in/aditya-dhumuntarao-80a0b8112/}{LinkedIndsadsadwadsa}\\
 	\href{https://github.com/Adhumunt}{GitHub}\\
 	}
 	\emailAdd{adhumunt@gmail.com}
@@ -70,7 +72,7 @@ def incmatrix(genl1,genl2):
 		\texttt{marginnote, sidenotes, fancyhdr, titlesec, geometry, and tcolorbox.}
 	\end{center}
 	The role of each packages is discussed in Part~\ref{Part:Modification}. Briefly, the \texttt{marginnote}, \texttt{sidenote}, \texttt{titlesec}, and \texttt{tcolorbox} packages are required to create the \texttt{$\backslash$part} environment. \texttt{geometry} is used globally to set the page width, page height, and margin width. \texttt{fancy\ hdr} (overridden on the title, contents, and \texttt{$\backslash$part} page) sets the header.
-	
+
 \part{Modifications}\label{Part:Modification}
 	\section{Features}\label{sec:Features}
 	\begin{margintable}\vspace{1.4in}\footnotesize
@@ -98,7 +100,9 @@ def incmatrix(genl1,genl2):
 	\newpage
 	\section{Included Packages} % (fold)
 	\label{sec:incpackage}
-	Additional package are listed right under the required packages in \texttt{NotesTeX.sty}. These are divided into font styling packages and mathematical and physics related packages. The list of packages are also reiterated here and their links are in the sidenotes.
+	Additional package are listed right under the required packages in \texttt{NotesTeX.sty}.
+	These are divided into font styling packages and mathematical and physics related packages.
+	The list of packages are also reiterated here and their links are in the sidenotes.
 	\begin{lstlisting}[
 	language={[LaTeX]TeX},
 	style=standalone,
@@ -106,7 +110,7 @@ def incmatrix(genl1,genl2):
 \usepackage[T1]{fontenc}                            % Font Styling
 \usepackage{lmodern,mathrsfs}
 	\end{lstlisting}
-	\begin{margintable}\footnotesize 
+	\begin{margintable}\footnotesize
 		\begin{tabularx}{\marginparwidth}{|X}
 			\href{https://www.ctan.org/pkg/fontenc}{fontenc}\\
 			\href{https://www.ctan.org/pkg/mathrsfs}{mathrsfs}\\
@@ -173,7 +177,7 @@ def incmatrix(genl1,genl2):
 				\draw[black,thick] (-1,-1) -- (-.06,-.06);
 				\draw[black,thick] (.06,.06) -- (1,1);
 				\draw[black,thick] (-1,1) -- (1,-1);
-				\filldraw[black] (-1,-1) circle (2pt) node[anchor=north] {2};
+				\filldraw[black] (-1,-1) circle (2pt) node[anchor=north] {$2$};
 				\filldraw[black] (-1,1) circle (2pt) node[anchor=south] {1};
 				\filldraw[black] (1,-1) circle (2pt) node[anchor=north] {3};
 				\filldraw[black] (1,1) circle (2pt) node[anchor=south] {4};
@@ -195,7 +199,7 @@ def incmatrix(genl1,genl2):
 	\begin{remark}\textbf{Why use both \texttt{marginnotes} and \texttt{sidenotes}?}
 		Quite simply, \texttt{marginnotes} overlap each other if they are too close whereas \texttt{sidenotes} both numbers and dynamically aligns all side notes, figures, and tables. However \texttt{sidenotes} cannot be used in equations, \texttt{multicols}, and with the \texttt{tcolorbox}\sn{See \ref{Sub:Special} and \ref{Sec: Fullpage} for more details.} environment. As the majority of the special environments from \texttt{amsthm} are modified to use \texttt{tcolorbox}, \texttt{marginnotes} becomes an essential part of \textit{NotesTeX}.
 	\end{remark}
-	
+
 
 	\section{\texttt{amsthm} Environments}\label{Sub:Special}
 	\texttt{amsthm} environments are defined as usual being enclosed by \texttt{$\backslash$begin\{environment\}}$\cdots$ \texttt{$\backslash$end\{environment\}}. Modifications include integration with the \texttt{tcolorbox} package. Note that counting for \texttt{theorems} and \texttt{lemmas} is distinct from the counting for \texttt{definitio} \texttt{ns}. Also, the \texttt{breakable} option for \texttt{tcolorbox} allows these environments to span multiple pages.
@@ -204,9 +208,15 @@ def incmatrix(genl1,genl2):
 
 	There is one issue with this however. Since we are using a \texttt{tcolorbox}, this proof environment is incompatible with \texttt{$\backslash$sn} and \texttt{$\backslash$sidenote}, as it results in a \textbf{Float(s) Error}. However, this environment is compatible with \texttt{$\backslash$mn} and \texttt{$\backslash$marginnote}.
 
+	\begin{equation}
+	\frac{121}{\vec{x}}
+	\end{equation}
+	\begin{equation}
+	\frac{121}{\vec{x}}
+	\end{equation}
 	\begin{definition}
 		The \texttt{definition} environment and the associated \texttt{tcolorbox} are provided by the following code in \texttt{NotesTeX.sty}:
-		\begin{lstlisting}
+		\begin{lstlisting}[language={[LaTeX]TeX}]
 \tcolorboxenvironment{definition}{
 	boxrule=0pt,
 	boxsep=0pt,
@@ -286,10 +296,10 @@ def incmatrix(genl1,genl2):
 	breakable,
 }
 		\end{lstlisting}
-	\end{example}	
+	\end{example}
 	\begin{remark}
 		The \texttt{remark} environment and the associated \texttt{tcolorbox} are provided by the following code in \texttt{NotesTeX.sty}:\mn{Coexistence of \texttt{amsthm} environment and \texttt{mn}}
-		\begin{lstlisting}
+		\begin{lstlisting}[language={[LaTeX]TeX},style=standalone]
 \tcolorboxenvironment{remark}{
 	boxrule=0pt,
 	boxsep=0pt,
@@ -305,6 +315,9 @@ def incmatrix(genl1,genl2):
 	\end{remark}
 
 	\section{Fullpage Environment}\label{Sec: Fullpage}
+		\begin{equation}
+	\sum^{6}_{i=0}\frac{121}{\vec{x}_i}
+	\end{equation}
 	\begin{fullpage}
 		The \texttt{fullpage} environment is defined by
 		\begin{center}
@@ -322,21 +335,21 @@ def incmatrix(genl1,genl2):
 		\end{lstlisting}
 	\end{fullpage}
 	\begin{remark}
-		Eliminating the \texttt{$\backslash$hrule} in the code will remove the lines surrounding the \texttt{fullpage} environment. Similarly, it is possible to change the vertical spacing after the \texttt{fullpage} is over, by modifying the \texttt{$\backslash$vspace\{\}} argument. 
+		Eliminating the \texttt{$\backslash$hrule} in the code will remove the lines surrounding the \texttt{fullpage} environment. Similarly, it is possible to change the vertical spacing after the \texttt{fullpage} is over, by modifying the \texttt{$\backslash$vspace\{\}} argument.
 	\end{remark}
-	
+
 	\begin{fullpage}
 		\begin{multicols}{2}
 		\texttt{multicols}\lec{lec}{entry}  may be used in conjunction with \texttt{fullpage}. I find it useful for formatting exercises in multiple columns and it makes the text distinct from the rest of the \texttt{fullpage} environment. The \texttt{lec} environment is compatible with \texttt{multicols} but \texttt{sidenote}, \texttt{marginnote} are not.\\
 
-		%\lipsum[1]		
+		%\lipsum[1]
 		\end{multicols}
 	\end{fullpage}
 
 	\subsection{Known Issues with Fullpage}\label{Sub: Fullpage_Issues}
 
 	\begin{remark}
-		Since the \texttt{fullpage} environment uses a \texttt{minipage}, and minipages do not work over multiple pages, one will need a new \texttt{fullpage} per page.	
+		Since the \texttt{fullpage} environment uses a \texttt{minipage}, and minipages do not work over multiple pages, one will need a new \texttt{fullpage} per page.
 	\end{remark}
 	\begin{remark}
 		If the \texttt{twoside} option is enabled in the \texttt{documentclass} header, then the \texttt{fullpage} is known to bleed out beyond the margin.
@@ -363,7 +376,7 @@ def incmatrix(genl1,genl2):
 	% 	  \end{center}
 	% 	\end{tcolorbox}
 	% }}
-	% ~ \newline 
+	% ~ \newline
 	\begin{lstlisting}
 \titleformat{\part}[hang]{{\thispagestyle{plain}}\Huge\bfseries}{\marginnote{
 	\begin{tcolorbox}
@@ -379,9 +392,9 @@ def incmatrix(genl1,genl2):
 }[-1.25in]}{0pt}{\Huge\bfseries}
 	\end{lstlisting}
 	\end{fullpage}
-	
+
 	This combines the \texttt{titlesec} and the \texttt{tcolorbox} packages, placing the title of the \texttt{$\backslash$part} on the left hand side, and the \texttt{$\backslash$part} number in the margin.
-	
+
 
 	\part{Advanced}
 	For those wanting to adjust the margin sizes, or the \texttt{fancyhdr} layout, there are a few comments that could be made here.

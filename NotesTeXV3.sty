@@ -104,6 +104,11 @@
 \usepackage{graphicx,wrapfig,float,caption}         % Figure Presets
 \usepackage{setspace,multicol}                      % Text Presets
 \usepackage{tikz,physics}                           % Physics Presets
+\tikzset{
+every node/.append style={font=\sffamily}
+}
+\usepackage{pgfplots}
+
 \usepackage{listings}
 \lstset{
 basicstyle = \ttfamily,
@@ -535,7 +540,7 @@ tabsize=2,
 %
 \ifnotoc\else
 \iftoccontinuous\else\newpage\fi
-\beforetochook\hrule
+\beforetochook{\color{ntex@color@primary}\hrule height .6\p@}%
 
 \renewcommand{\cfttoctitlefont}{\Large\sffamily\bfseries}
 
@@ -563,7 +568,7 @@ tabsize=2,
 
 \tableofcontents
 \afterTocSpace
-\hrule
+{\color{ntex@color@primary}\hrule height .6\p@}%
 \afterTocRuleSpace
 \fi
 %\if!\@acknowledgments!\else\vfill\noindent{\renewcommand\baselinestretch{.9}\textsc{Acknowledgments:}}\ \@acknowledgments\afterAbstractSpace\fi
