@@ -190,7 +190,7 @@ tabsize=2,
     \fancyheadoffset[rh]{\myoddoffset}%
     \renewcommand{\headrulewidth}{0pt}%
     \fancyhead[L]{\sffamily\textsc{\leftmark}}%
-    \fancyhead[R]{\footnotesize \textit{\rightmark}~~~~ \sffamily\thepage}%
+    \fancyhead[R]{\footnotesize \sffamily\textit{\rightmark}~~~~ \sffamily\thepage}%
   }%
 
   \fancypagestyle{fancypart}{%
@@ -363,6 +363,7 @@ tabsize=2,
 \def\@preprint{\@empty}
 \def\@acknowledgments{\@empty}
 
+\newcommand{\fakeparagraph}[1]{\textbf{\sffamily {#1}}\hspace{1.75ex}}
 \newcommand{\subheader}[1]{\gdef\@subheader{#1}}
 \newcommand{\keywords}[1]{\if!\@keywords!\gdef\@keywords{#1}\else%
 \PackageWarningNoLine{\jname}{Keywords already defined.\MessageBreak Ignoring last definition.}\fi}
@@ -635,6 +636,7 @@ tabsize=2,
 
 
 %headings style
+\renewcommand\thepart{\arabic{part}}
 \renewcommand\section{\@startsection{section}{1}{\z@}%
                                    {-3.5ex \@plus -1.3ex \@minus -.7ex}%
                                    {2.3ex \@plus.4ex \@minus .4ex}%
@@ -646,7 +648,7 @@ tabsize=2,
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
                                    {-2.3ex\@plus -1ex \@minus -.5ex}%
                                    {1ex \@plus .2ex \@minus .2ex}%
-                                   {\sffamilyt\normalsize\bfseries}}
+                                   {\sffamily\normalsize\bfseries}}
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
                                    {1.75ex \@plus1ex \@minus.2ex}%
                                    {-1em}%
@@ -660,7 +662,7 @@ tabsize=2,
 
 \titleformat{name=\section}[display]
 {\sffamily}
-{\footnotesize\textsc{Abschnitt \thesection}}
+{\footnotesize\textsc{Sektion \thesection}}
 {0pt}
 {\Large\bfseries}
 [\vspace{-10pt}\color{ntex@color@primary}\rule{\textwidth}{.6pt}]
@@ -673,25 +675,25 @@ tabsize=2,
 
 \titleformat{name=\subsection}[display]
 {\sffamily}
-{\footnotesize\textsc{Unterabschnitt \thesubsection}}
+{\footnotesize\textsc{Subsektion \thesubsection}}
 {0pt}
 {\large\bfseries}
 [\vspace{-5pt}\color{ntex@color@primary}\rule{\textwidth}{.6pt}]
 
-% \titleformat{name=\part}[hang]
-% {{\thispagestyle{fancypart}}\Huge\bfseries}
-% {\marginnote{
-%   \begin{center}
-%   {\color{black}\thepart}
-%   \end{center}}[-.95in]}{0pt}{\Huge\bfseries\itshape}
+\titleformat{name=\part}[hang]
+{\sffamily}
+{\setcounter{section}{0}\thispagestyle{fancypart}}
+{0pt}
+{\Huge\bfseries\scshape}
+[\vspace{-5pt}\color{ntex@color@primary}\rule{\textwidth}{.6pt}]
 
-\titleformat{\part}[hang]{\setcounter{section}{0}{\thispagestyle{fancypart}}\Huge\bfseries}{\marginnote{
-\begin{tcolorbox}[width=\marginparwidth,height=\marginparwidth/2,colback=black!50!white,colframe=black!50!white,center title,fonttitle=\sffamily\bfseries\normalsize,title=TEIL,text fill]
-  \begin{center}
-  {\sffamily\color{white}\thepart}
-  \end{center}
-\end{tcolorbox}
-}[-1.25in]}{0pt}{\sffamily\Huge\bfseries\scshape}
+% \titleformat{\part}[hang]{\setcounter{section}{0}{\thispagestyle{fancypart}}\Huge\bfseries}{\marginnote{
+% \begin{tcolorbox}[width=\marginparwidth,height=\marginparwidth/2,boxrule=0.6pt,colback=white,colframe=ntex@color@primary,center title,fonttitle=\sffamily\bfseries\normalsize,title=TEIL,colbacktitle=white]
+%   \begin{center}
+%   {\sffamily\color{black}\thepart}
+%   \end{center}
+% \end{tcolorbox}
+% }[-1.25in]}{0pt}{\sffamily\Huge\bfseries\scshape}
 
 %Caption of figure and table
 \def\fnum@figure{\sffamily\textbf{\figurename\nobreakspace\thefigure}\normalfont}

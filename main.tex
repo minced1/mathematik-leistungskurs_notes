@@ -1,440 +1,330 @@
-% arara: lualatex: {options: ['--output-directory=./build']}
+% arara: lualatex: {options: []}
 \documentclass[10pt]{article}
-\usepackage{NotesTeXV3,lipsum}
-% \SetColorProfile{9A3136}{9D6669}{999731}{317499}{A1B8C5}
-\usepackage[ngerman]{babel}
-
+\usepackage{NotesTeXV3,csquotes,tabularx}
+\SetColorProfile{BEA035}{9C8C52}{3D4CDB}{525786}{5C5748}
+\usepackage[english]{babel}
+% \tolerance=1
+% \emergencystretch=\maxdimen
+% \hyphenpenalty=10000
+% \hbadness=10000
 
 \begin{document}
-	\title{{Notes\TeX}\\{\normalsize{\itshape An All-In-One Notes Package For Students}}}
-	\author{Aditya Dhumuntarao}
+\title{{Englisch}\\{\normalsize{\itshape Leistungskurs}}}
+	\author{Never Gude}
 	\affiliation{
-	PhD. Student at the University of Minnesota\\
-	\href{https://adhumunt.github.io/}{Website}\\
-	\href{https://inspirehep.net/authors/1669979}{Inspire-HEP}\\
-	\href{https://www.linkedin.com/in/aditya-dhumuntarao-80a0b8112/}{LinkedIndsadsadwadsa}\\
-	\href{https://github.com/Adhumunt}{GitHub}\\
+	Carl-Friedrich-Gauß Gymnasium Hockenheim\\
+	\href{https://github.com/minced1}{GitHub}\\
 	}
-	\emailAdd{adhumunt@gmail.com}
+	\emailAdd{j.gude@posteo.de}
 	\maketitle
 	\newpage
 	\pagestyle{fancynotes}
-	\part{Introduction}
 
-	\section{Required Packages}\label{sec:reqpackages}
+\part{Kommunikationsprüfung}
+	\label{part:kompruef}
+\section{United Kingdom}
+	\label{sec:uk}
+\subsection{Empire and Commonwealth}
+	\label{ssec:uk@empire}
+\subsection{Immigration}
+	\label{ssec:uk@immig}
+\subsection{Global role: EU and Brexit}
+	\label{ssec:uk@brexit}
 
-	\begin{lstlisting}[
-		language=Python,
-		style=standalone
-		]
-import numpy as np
+\section{India}
+	\label{sec:india}
+\subsection{Partition of British India}
+	\label{ssec:india@britindia}
+\subsection{Poverty}
+	\label{ssec:india@poverty}
+\subsection{Language}
+	\label{ssec:india@language}
+\subsection{Technology vs. Backwardsness}
+	\label{ssec:india@tech}
 
-def incmatrix(genl1,genl2):
-	string = "Hello World"
-	m = len(genl1)
-	n = len(genl2)
-	M = None #to become the incidence matrix dsjklasd dsa dsadasda da dsadadadas
-	VT = np.zeros((n*m,1), int)  #dummy variable
+\section{Globalization}
+	\label{sec:global}
+\subsection{Social aspects}
+	\label{ssec:global@social}
+\subsection{Political aspects}
+	\label{ssec:global@political}
+\subsection{Economic aspects}
+	\label{ssec:global@economic}
 
-	#compute the bitwise xor matrix
-	M1 = bitxormatrix(genl1)
-	M2 = np.triu(bitxormatrix(genl2),1)
+\section{United States of America}
+	\label{sec:usa}
+\subsection{History}
+	\label{ssec:usa@history}
+\begin{itemize}[leftmargin=5pt+\widthof{1775 - 1783}]
+\item[1607] First permanent English settlement at Jamestown (Virginia)
+\item[1620] 'Pilgrim Fathers' (i.e. English Puritans) found colony at Plymouth (Massachusetts)
+\item[1775 - 1783] 13 colonies fight the War of Independence against Britain
+\item[4.7.1775] The Declaration of Independence is signed
+\item[1789] US Constitution goes into effect. The former colonies are now the United States of America
+\item[1803] The Louisiana Purchase: the United States doubles in size
+\item[1861 - 1865] Civil War; slavery ends in the South
+\item[1890] The last major battle against Native American tribes. Congress officially declares the frontier closed
+\item[1917] USA enters World War I (first involvement in a European conflict)
+\item[1919] Women are given the right to vote
+\item[1919] Great depression begins
+\item[1941] USA enters World War II following Japanese attack on Pearl Harbor
+\item[1945] USA drops atomic bombs on Hiroshima and Nagasaki
+\item[1945] Cold War begins as USA and Soviet Union emerge as new world powers
+\item[1954] US Supreme Court declares segregated schools illegal
+\item[1955] Civil Rights Movement begins with the Montgomery (Alabama) bus boycott
+\item[1989 - 1991] Cold War ends with the collapse of the Soviet Union
+\item[2001] Terrorist attacks on the Pentagon and the World Trade Center
+\item[2006] US population reaches 300 million
+\item[2008] Financial crisis begins
+\item[2008] Barack Obama is elected US President. He is the first African American holding the office (2009 - 2017)
+\item[2017] Donald Trump becomes the US President. His slogan is 'America First'
+\item[2020] Storm of the Capitol
+\item[2021] Joe Biden is elected US President
+\end{itemize}
+\subsection{Constitution}
+	\label{ssec:usa@constitution}
+\paragraph{The Declaration of Independence}
+In the Declaration of Independence the thirteen American colonies announced their freedom from
+British rule. One July 11th 1776, Congress appointed a committee to draft a formal Declaration of
+Independence. Thomas Jefferson, one of the appointed members, was asked to write the draft,
+which he completed in about two weeks. The date of its adoption by the Second Continental
+Congress on July 4th 1776, is celebrated as the birthday of the United States.
+\begin{example}
+When, in the Course of human events, it becomes necessary for one people to
+dissolve the political bands which have connected them with another, and to
+assume among the powers of the earth, the separate and equal station to which
+the Laws of Nature and of Nature's God entitle them, a decent respect to the
+opinions of mankind requires that they should declare the causes which impel
+them to the separation.\\
+We hold these truths to be self-evident, that all men are created equal, that they
+are endowed by their Creator with certain unalienable Rights, that among these are
+Life, Liberty and the pursuit of Happiness.--That to secure these rights,
+Governments are instituted among Men, deriving their just powers from the
+consent of the governed, --That whenever any Form of Government becomes
+destructive of these ends, it is the Right of the People to alter or to abolish it, and
+to institute new Government, laying its foundation on such principles and
+organizing its powers in such form, as to them shall seem most likely to effect their
+Safety and Happiness.
+\end{example}
 
-	for i in range(m-1):
-		for j in range(i+1, m):
-			[r,c] = np.where(M2 == M1[i,j])
-			for k in range(len(r)):
-				VT[(i)*n + r[k]] = 1;
-				VT[(i)*n + c[k]] = 1;
-				VT[(j)*n + r[k]] = 1;
-				VT[(j)*n + c[k]] = 1;
+\paragraph{The Preamble to the United States Constitution}
+The Preamble to the United States Constitution, beginning with the words \enquote{We the People}, is a brief
+introductory statement of the Constitution's fundamental purposes and guiding principles. Courts
+have referred to it as reliable evidence of the Founding Fathers' intentions regarding the
+Constitution's meaning and what they hoped the Constitution would achieve.
+\begin{example}
+We the People of the United States, in Order to form a more perfect Union,
+establish Justice, insure domestic Tranquility, provide for the common defence,
+promote the general Welfare, and secure the Blessings of Liberty to ourselves and
+our Posterity, do ordain and establish this Constitution for the United States of
+America.
+\end{example}
 
-				if M is None:
-					M = np.copy(VT)
-				else:
-					M = np.concatenate((M, VT), 1)
+\paragraph{The Bill of Rights}
+The original Constitution of the USA was concerned with the way the new government would be
+structured and what powers it had. People were worried that the government might become too
+powerful and autocratic, just like the British king, so a Bill of Rights consisting of ten amendments
+(i.e. changes) to the Constitution was quickly passed in 1791. These amendments were intended to
+protect the people from their rulers. The Bill of Rights describes the basic rights of the people and
+forbids the government from denying these liberties. Included are the freedoms of speech, religion,
+the press, and the right to assemble. Today the Bill of Rights also serves to protect minorities and
+individuals from the majority. Altogether there have been 27 amendments to the Constitution.
+\begin{example}
+\fakeparagraph{Amendment I}
+Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging
+the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the government
+for a redress of grievances.
 
-				VT = np.zeros((n*m,1), int)
+\fakeparagraph{Amendment II}
+A well-regulated militia, being necessary to the security of a free state, the right of the people to keep and bear arms, shall
+not be infringed.
 
-	return M
+\fakeparagraph{Amendment III}
+No soldier shall, in time of peace be quartered in any house, without the consent of the owner, nor in time of war, but in a
+manner to be prescribed by law.
 
-	\end{lstlisting}
+\fakeparagraph{Amendment IV}
+The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and
+seizures, shall not be violated, and no warrants shall issue, but upon probable cause, supported by oath or affirmation, and
+particularly describing the place to be searched, and the persons or things to be seized.
+\end{example}
+\subsection{Values}
+	\label{ssec:usa@values}
+\paragraph{Democracy}
+Representative government and the separation of powers in a system of checks
+and balances are the basis of American Democracy, which should represent American
+citizen's interests and be an example to the world.
 
-\begin{margintable}\vspace{.8in}\footnotesize
-		\begin{tabularx}{\marginparwidth}{|X}
-		%Section~\ref{sec:motivation}. Motivation\\
-		Section~\ref{sec:reqpackages}. Required Packages\\
-		%Section~\ref{sec:license}. Margins\\
-		\end{tabularx}
-	\end{margintable}
-	For \textit{NotesTeX,} the following packages are required
-	\begin{center}
-		\texttt{marginnote, sidenotes, fancyhdr, titlesec, geometry, and tcolorbox.}
-	\end{center}
-	The role of each packages is discussed in Part~\ref{Part:Modification}. Briefly, the \texttt{marginnote}, \texttt{sidenote}, \texttt{titlesec}, and \texttt{tcolorbox} packages are required to create the \texttt{$\backslash$part} environment. \texttt{geometry} is used globally to set the page width, page height, and margin width. \texttt{fancy\ hdr} (overridden on the title, contents, and \texttt{$\backslash$part} page) sets the header.
+\paragraph{The Pursuit of Happiness}
+The American Constitution sees it as an unalienable right for every citizen to seek
+self-fulfilment. The Pursuit of Happiness, together with the right to life and liberty, are at the core of the
+US American understanding of democracy.
 
-\part{Modifications}\label{Part:Modification}
-	\section{Features}\label{sec:Features}
-	\begin{margintable}\vspace{1.4in}\footnotesize
-		\begin{tabularx}{\marginparwidth}{|X}
-		Section~\ref{sec:Features}. Features\\
-		Section~\ref{sec:incpackage}. Included Packages\\
-		Section~\ref{Sec:Margins}. Margins\\
-		Section~\ref{Sub:Special}. \texttt{amsthm} Environs.\\
-		Section~\ref{sec:part}. Part Environment\\
-		Section~\ref{Sec: Fullpage}. Fullpage Environment\\
-		\end{tabularx}
-		\caption{Contents for \textsc{Part II}}
-	\end{margintable}
-	\textit{NotesTeX} inherits \texttt{jhep} formatting for sections, subsections, subsubsections, title page, contents page, and bibliography presets. Significant extensions include the following:
-	\begin{enumerate}
-		\item Several mathematics and physics packages.
-		\item Margins and margin environments for tables, figures, and asides.
-		\item \TeX\ shortcuts for various math scripts namely vector bold math, \lstinline{mathbb},\\ \lstinline{mathfrak}, and \lstinline{mathcal}.
-		\item \lstinline{amsthm} integrations and special environments for theorems, lemmas, proofs, definitions, examples, and remarks.\
-		\item Stylized support for the \lstinline{part} environment.
-		\item A fullpage environment that spans across the text width and the margin for longer equations and horizontal figures.
-	\end{enumerate}
-	Each of these will be discussed in the following subsections.
+\paragraph{Individual Freedom}
+Americans' understanding of Individual Freedom is shaped by the Founding Fathers' belief that all
+people are equal. Through the US Constitution's Bill of Rights, the government is
+responsible for protecting each individual's basic \enquote{inalienable} rights among
+which are freedom of speech, press, and religion.
 
-	\newpage
-	\section{Included Packages} % (fold)
-	\label{sec:incpackage}
-	Additional package are listed right under the required packages in \texttt{NotesTeX.sty}.
-	These are divided into font styling packages and mathematical and physics related packages.
-	The list of packages are also reiterated here and their links are in the sidenotes.
-	\begin{lstlisting}[
-	language={[LaTeX]TeX},
-	style=standalone,
-	]
-\usepackage[T1]{fontenc}                            % Font Styling
-\usepackage{lmodern,mathrsfs}
-	\end{lstlisting}
-	\begin{margintable}\footnotesize
-		\begin{tabularx}{\marginparwidth}{|X}
-			\href{https://www.ctan.org/pkg/fontenc}{fontenc}\\
-			\href{https://www.ctan.org/pkg/mathrsfs}{mathrsfs}\\
-			\href{https://www.ctan.org/pkg/enumitem}{enumitem}\\
-			\href{https://www.ctan.org/pkg/mathtools}{mathtools}\\
-			\href{https://www.ctan.org/pkg/amsfonts}{amsfonts}\\
-			\href{https://www.ctan.org/pkg/amsthm}{amsthm}\\
-			\href{https://www.ctan.org/pkg/bm}{bm}\\
-			\href{https://www.ctan.org/pkg/array}{array}\\
-			\href{https://www.ctan.org/pkg/tabularx}{tabularx}\\
-			\href{https://www.ctan.org/pkg/booktabs}{booktabs}\\
-			\href{https://www.ctan.org/pkg/graphicx}{graphicx}\\
-			\href{https://www.ctan.org/pkg/float}{float}\\
-			\href{https://www.ctan.org/pkg/caption}{caption}\\
-			\href{https://www.ctan.org/pkg/setspace}{setspace}\\
-			\href{https://www.ctan.org/pkg/multicol}{multicol}\\
-			\href{https://www.ctan.org/topic/pgf-tikz}{tikz}\\
-			\href{https://www.ctan.org/pkg/physics}{physics}\\
-			\href{https://www.ctan.org/pkg/cancel}{cancel}
-		\end{tabularx}
-		\caption{Links}
-	\end{margintable}
+\paragraph{Individualism and Self-Reliance}
+Closely connected to the notion of freedom, the idea of Individualism and Self-Reliance encourages American
+citizens to trust in themselves, their abilities, and their conscience to cope with
+their individual fate.
 
-\begin{lstlisting}[
-	language={[LaTeX]TeX},
-	style=standalone,
-	]
-\usepackage[shortlabels]{enumitem}                  % Enumitem Options
-\usepackage{mathtools,amssymb,amsfonts,amsthm,bm}   % Math Presets
-\usepackage{array,tabularx,booktabs}                % Table Presets
-\usepackage{graphicx,wrapfig,float,caption}         % Figure Presets
-\usepackage{setspace,multicol}                      % Text Presets
-\usepackage{tikz,physics}                    % Physics Presets
-\end{lstlisting}
+\paragraph{Can-Do-Spirit}
+Inventiveness and a tendency to idealize whatever works or is practical illustrate
+an American's Can-Do-Spirit which is often attributed to the frontier experience where man
+was left to his own devices when it came to survive in the wilderness.
 
-	% section prepackage (end)
+\paragraph{Equal Opportunities}
+Over centuries, the concept of the American Dream has taught Americans that
+self-realization can be achieved through hard work, thrift, family loyalty, and faith
+in free enterprise. Equal Opportunities, however, have not been within reach for all: segregation and
+discrimination have interfered with indigenous peoples and minorities' attempts
+to realize the rights and freedoms, which are also guaranteed for them by the
+Constitution.
 
-	\section{Margins}\label{Sec:Margins}%
-	\textit{NotesTeX} inherits all the margin commands that are used by \texttt{sidenote} and \texttt{marginnote}, and two additional pre-configured commands known as \texttt{$\backslash$mn} and \texttt{$\backslash$sn}. The relevant commands, and the packages they belong to, are
-	\begin{center}
-		\begin{multicols}{2}
-		\noindent\texttt{
-		$\backslash$marginnote~[marginnote]\\
-		$\backslash$mn~[NotesTeX]\\
-		$\backslash$sidenote~[sidenote]\\
-		$\backslash$sn~[NotesTeX]\\
-		$\backslash$lec~[NotesTeX]\\
-		$\backslash$marginfigure~[sidenote]\\
-		$\backslash$margintable~[sidenote]\\
-		}
-	\end{multicols}
-	\end{center}
-	The implementation of each of these is as follows.
-	\begin{enumerate}
-		\item \texttt{Marginnote:} This is how a \texttt{$\backslash$marginnote\{...\}} behaves.\marginnote{Not numbered, 10pt.}
-		\item \texttt{Mn:} This is how a \texttt{$\backslash$mn\{...\}} behaves.\mn{Numbered, footnotesize.}
-		\item \texttt{Sidenote:} This is how a \texttt{$\backslash$sidenote\{...\}} behaves.\sidenote{Numbered, 10pt.}
-		\item \texttt{Sn:} This is how a \texttt{$\backslash$sn\{...\}} behaves.\sn{Numbered, footnotesize.}
-		\item \texttt{Lec:} This environment appears in the left column and requires two inputs. The example here is \texttt{$\backslash$lec\{Left Side\}\{Some text goes here.\}}.\lec{Left Side}{Some text goes here.}
-		\item \texttt{Marginfigure:} This environment requires the \texttt{$\backslash$begin\{marginfigure\}} {$\cdots$}\newline\texttt{$\backslash$end\{marginfigure\}} enclosings. The \texttt{caption} package is needed to caption the figure.
-		\begin{marginfigure}
-		\begin{center}
-			\begin{tikzpicture}
-				\draw[black,thick] (-1,-1) -- (-.06,-.06);
-				\draw[black,thick] (.06,.06) -- (1,1);
-				\draw[black,thick] (-1,1) -- (1,-1);
-				\filldraw[black] (-1,-1) circle (2pt) node[anchor=north] {$2$};
-				\filldraw[black] (-1,1) circle (2pt) node[anchor=south] {1};
-				\filldraw[black] (1,-1) circle (2pt) node[anchor=north] {3};
-				\filldraw[black] (1,1) circle (2pt) node[anchor=south] {4};
-			\end{tikzpicture}
-		\end{center}
-		\caption{Marginfigure: Tikz}
-		\end{marginfigure}%
-		\item \texttt{Margintable:} This environment requires the \texttt{$\backslash$begin\{margintable\}} {$\cdots$}\newline\texttt{$\backslash$end\{margintable\}} enclosings. A table package, such as \texttt{tabular}, \texttt{tabulary}, \texttt{tabu}, or \texttt{tabularx} is required. The \texttt{caption} package is needed to caption the table.
-		\begin{margintable}
-			\vspace{.1in}
-			\begin{tabularx}{\marginparwidth}{|X|X|}
-			\hline
-			\textit{NotesTeX} & \textbf{rocks!}\\
-			\hline
-			\end{tabularx}
-			\caption{Margintable}
-		\end{margintable}	\end{enumerate}
+\paragraph{Mobility}
+For the US nation of immigrants, in which moving elsewhere and making a fresh
+start is seen as a practical solution to many a challenge, Mobility can be described as a
+form of realized optimism promising a better life ahead.
 
-	\begin{remark}\textbf{Why use both \texttt{marginnotes} and \texttt{sidenotes}?}
-		Quite simply, \texttt{marginnotes} overlap each other if they are too close whereas \texttt{sidenotes} both numbers and dynamically aligns all side notes, figures, and tables. However \texttt{sidenotes} cannot be used in equations, \texttt{multicols}, and with the \texttt{tcolorbox}\sn{See \ref{Sub:Special} and \ref{Sec: Fullpage} for more details.} environment. As the majority of the special environments from \texttt{amsthm} are modified to use \texttt{tcolorbox}, \texttt{marginnotes} becomes an essential part of \textit{NotesTeX}.
-	\end{remark}
+\paragraph{Patriotism}
+Slogans like Proud to be American, the playing of the national anthem at sporting
+events or the pledging of allegiance, which starts off every school morning, are
+signs of a heartfelt omnipresent Patriotism which show Americans' intensified sense of
+national identity and pride in their nation's unique promises.
 
+\paragraph{Progress}
+Americans associate Progress with the idea of making use of the opportunities, which
+their nation holds in store for them. Hard work and the willingness to make sacrifices
+for a better tomorrow promise self-realization as well as an increase in
+material plenty from generation to generation.
 
-	\section{\texttt{amsthm} Environments}\label{Sub:Special}
-	\texttt{amsthm} environments are defined as usual being enclosed by \texttt{$\backslash$begin\{environment\}}$\cdots$ \texttt{$\backslash$end\{environment\}}. Modifications include integration with the \texttt{tcolorbox} package. Note that counting for \texttt{theorems} and \texttt{lemmas} is distinct from the counting for \texttt{definitio} \texttt{ns}. Also, the \texttt{breakable} option for \texttt{tcolorbox} allows these environments to span multiple pages.
+\paragraph{National Security}
+In recent years National Security has come into focus. 9/11 left Americans in a state of shock
+and has made certain rights negotiable (right to privacy) which were formerly
+undisputed.
+\subsection{Immigration}
+	\label{ssec:usa@immig}
+The English have been going to North America from the late 16th century on; Spain sent people to the
+southern part of the region and many Dutch and Germans also went over.
 
-	If one wishes to change the color, simply modify the line which states \texttt{borderline west=\{1pt\}}\texttt{\{0pt\}\{blue\}}. The first numeric value dictates the width of the line, the second dictates how close it is away from the \textit{left} margin, while the last argument declares the color. This customization is independent of the \texttt{amsthm} environments.
+When the U.S. became independent, it was written into the \emph{Constitution} that there could be no
+limits on immigration until 1808. The main period of immigration was between 1800 and 1917. Early
+in this period, many immigrants arrived from Britain and Germany, and many Chinese went to
+California. Later, the main groups were Italians, Irish, Eastern Europeans and Scandinavians. Many
+Jews came from Germany and Eastern Europe. Just before World War I, there were nearly a million
+immigrants a year. Many immigrants came to New York and Boston, and Ellis Island, near New York,
+became famous as a receiving station. The \emph{Immigration Act of 1917}, and other laws that followed it,
+limited the number of immigrants and the countries that they could come from. Since then,
+immigration has been limited to a few people who are selected for an immigrant visa, commonly
+called green card. Hispanics and Asians now make up the largest group of immigrants.
 
-	There is one issue with this however. Since we are using a \texttt{tcolorbox}, this proof environment is incompatible with \texttt{$\backslash$sn} and \texttt{$\backslash$sidenote}, as it results in a \textbf{Float(s) Error}. However, this environment is compatible with \texttt{$\backslash$mn} and \texttt{$\backslash$marginnote}.
+Immigration policy, including illegal immigration to the United States, was a signature issue of former
+U.S. president \emph{Donald Trump's} presidential campaign. He repeatedly said that illegal immigrants are
+criminals. A hallmark promise of his campaign was to build a substantial wall on the United States-
+Mexico border and to force Mexico to pay for the wall.
 
-	\begin{equation}
-	\frac{121}{\vec{x}}
-	\end{equation}
-	\begin{equation}
-	\frac{121}{\vec{x}}
-	\end{equation}
-	\begin{definition}
-		The \texttt{definition} environment and the associated \texttt{tcolorbox} are provided by the following code in \texttt{NotesTeX.sty}:
-		\begin{lstlisting}[language={[LaTeX]TeX}]
-\tcolorboxenvironment{definition}{
-	boxrule=0pt,
-	boxsep=0pt,
-	colback={White!90!Cerulean},
-	enhanced jigsaw,
-	borderline west={2pt}{0pt}{Cerulean},
-	sharp corners,
-	before skip=10pt,
-	after skip=10pt,
-	breakable,
-}
-		\end{lstlisting}
-	\end{definition}
-	\begin{theorem}
-		The \texttt{theorem} environment and the associated \texttt{tcolorbox} are provided by the following code in \texttt{NotesTeX.sty}:
-		\begin{lstlisting}
-\tcolorboxenvironment{theorem}{
-	boxrule=0pt,
-	boxsep=0pt,
-	colback={White!90!Dandelion},
-	enhanced jigsaw,
-	borderline west={2pt}{0pt}{Dandelion},
-	sharp corners,
-	before skip=10pt,
-	after skip=10pt,
-	breakable,
-}
-		\end{lstlisting}
-	\end{theorem}
-	\begin{lemma}
-		The \texttt{lemma} environment and the associated \texttt{tcolorbox} are provided by the following code in \texttt{NotesTeX.sty}:
-		\begin{lstlisting}
-\tcolorboxenvironment{lemma}{
-	boxrule=0pt,
-	boxsep=0pt,
-	blanker,
-	borderline west={2pt}{0pt}{Red},
-	before skip=10pt,
-	after skip=10pt,
-	sharp corners,
-	left=12pt,
-	right=12pt,
-	breakable,
-}
-		\end{lstlisting}
-	\end{lemma}
-	\begin{proof}
-		The \texttt{proof} environment and the associated \texttt{tcolorbox} are provided by the following code in \texttt{NotesTeX.sty}:
-		\begin{lstlisting}
-\tcolorboxenvironment{proof}{
-	boxrule=0pt,
-	boxsep=0pt,
-	blanker,
-	borderline west={2pt}{0pt}{NavyBlue!80!white},
-	before skip=10pt,
-	after skip=10pt,
-	left=12pt,
-	right=12pt,
-	breakable,
-}
-		\end{lstlisting}
-		\qed
-	\end{proof}
-	\begin{example}
-		The \texttt{example} environment and the associated \texttt{tcolorbox} are provided by the following code in \texttt{NotesTeX.sty}:
-		\begin{lstlisting}
-\tcolorboxenvironment{example}{
-	boxrule=0pt,
-	boxsep=0pt,
-	blanker,
-	borderline west={2pt}{0pt}{Black},
-	sharp corners,
-	before skip=10pt,
-	after skip=10pt,
-	left=12pt,
-	right=12pt,
-	breakable,
-}
-		\end{lstlisting}
-	\end{example}
-	\begin{remark}
-		The \texttt{remark} environment and the associated \texttt{tcolorbox} are provided by the following code in \texttt{NotesTeX.sty}:\mn{Coexistence of \texttt{amsthm} environment and \texttt{mn}}
-		\begin{lstlisting}[language={[LaTeX]TeX},style=standalone]
-\tcolorboxenvironment{remark}{
-	boxrule=0pt,
-	boxsep=0pt,
-	blanker,
-	borderline west={2pt}{0pt}{Green},
-	before skip=10pt,
-	after skip=10pt,
-	left=12pt,
-	right=12pt,
-	breakable,
-}
-		\end{lstlisting}
-	\end{remark}
+\paragraph{Illegal immigration}
+\begin{table}[h!]
+	\centering
+	\begin{tabularx}{\textwidth}{l|l}
+		\hline
+		\fakeparagraph{winners} & \fakeparagraph{reasons}\\
+		employers in industries (service, tourism) & cheap labour \\
+		consumers & cheap prices \\
+		immigrants children & free education \\
+		federal government & ... \\ \hline
+		\fakeparagraph{losers} & \fakeparagraph{reasons}\\
+		tax paying (immigrants) & ... \\
+		local workers & ... \\ \hline
+		\fakeparagraph{unclear} & \fakeparagraph{reasons}\\
+		illegal immigrants & ... \\
+		community & ... \\ \hline
+	\end{tabularx}
+	\caption{Winners and losers of illegal immigration}
+	\label{tab:my_label}
+\end{table}
 
-	\section{Fullpage Environment}\label{Sec: Fullpage}
-		\begin{equation}
-	\sum^{6}_{i=0}\frac{121}{\vec{x}_i}
-	\end{equation}
-	\begin{fullpage}
-		The \texttt{fullpage} environment is defined by
-		\begin{center}
-			\texttt{$\backslash$begin\{fullpage\}}\\
-			$\cdots$\\
-			\texttt{$\backslash$end\{fullpage\}}
-		\end{center}
-		with the width of the \texttt{fullpage} environment given by \texttt{$\backslash$textwidth}+\texttt{$\backslash$marginparsep}+\texttt{$\backslash$marginparwidth}. The code in \texttt{NotesTeX.sty} that is responsible for the \texttt{fullpage} environment is given by
-		\begin{lstlisting}
-\newenvironment{fullpage}{
-{\smallskip\noindent
-\begin{minipage}{\textwidth+\marginparwidth+\marginparsep}\hrule\smallskip\smallskip}
-{\smallskip\smallskip\hrule\end{minipage}\vspace{.1in}
-}
-		\end{lstlisting}
-	\end{fullpage}
-	\begin{remark}
-		Eliminating the \texttt{$\backslash$hrule} in the code will remove the lines surrounding the \texttt{fullpage} environment. Similarly, it is possible to change the vertical spacing after the \texttt{fullpage} is over, by modifying the \texttt{$\backslash$vspace\{\}} argument.
-	\end{remark}
+\subsection{American dream}
+	\label{ssec:usa@dream}
+\subsection{Racial issues}
+	\label{ssec:usa@racial}
+\begin{itemize}[leftmargin=5pt+\widthof{1950s and 1960s}]
+\item[Since 1640] Slavery is an essential part of cotton and tobacco-growing industries in the South
+\item[1775] American War of Independence between Britain and its American colonies
+begins
+\item[1776] Declaration of Independence adopted
+\item[1783] American colonies win the War of Independence against Britain
+\item[1860] President Abraham Lincoln tries to abolish slavery; Southern States of America try to leave the Union in protest
+\item[1861] Northern States of America move on the South to prevent the break-up of the USA; the American Civil War begins
+\item[1863] Emancipation Proclamation signed by Abraham Lincoln, freeing all slaves
+\item[1865] American Civil War ends with a victory of the Northern States; 13th Amendment to the Constitution makes slavery illegal in the USA
+\item[1865 - 1877] Reconstruction era; remaking of the Southern United States after the Civil War
+\item[1865/1866] The Black Codes, a set of rules, are passed in the South to \enquote{restore all of slavery but its name} southern blacks are
+\begin{itemize}
+\item denied the right to vote
+\item excluded from certain jobs
+\item denied the right to own land
+\item prohibited from possessing firearms
+\end{itemize}
+\item[1866] The Ku Klux Klan is founded, resulting in lynching of and discrimination against blacks well into the 20th century
+\item[1870] 5th Amendment to the Constitution gives all men the right to vote, regardless of race, but Jim Crow Laws make this difficult in reality and segregation of blacks is still the norm in American society
+\item[1880s - 1920] peak years of black lynchings
+\item[1896] Supreme Court rules, in Plessy v. Ferguson, that so-called \enquote{separate but equal} facilities -- including public transport and schools -- are constitutional
+\item[WWI] Segregated regiments of white and African-Americans fight for the U.S.
+\item[1916 - 1970] the Great Migration; the movement of six million African Americans out of the rural Southern United States to the urban Northeast, Midwest and West
+\item[WWII] ca. 1 mio African-American soldiers fight for the U.S.
+\item[1950s and 1960s] Civil Rights Movement in America, led by Dr Martin Luther King Jr.
+\item[1955] Rosa Parks refuses to give up her seat on a bus -- Montgomery Bus Boycott begins
+\item[1956] Montgomery Bus Boycott ends - buses are no longer segregated
+\item[1957] Little Rock Nine escorted into Little Rock High School by federal troopers, signaling the end of segregated education
+\item[1963] Martin Luther King leads a march on Washington and delivers the speech \enquote{I Have a Dream}
+\item[1960s] Malcolm X becomes famous leader of Black Muslims; promotion of a separate black state and acceptance of violence as a means of self-defense
+\item[1964] Civil Rights Act passed; last of the Jim Crow Laws regarding segregation of Blacks are abolished
+\item[1965] Assassination of Malcom X; President Lyndon B. Johnson signs Voting Rights Act; literacy tests required to be allowed to vote are suspended in order to allow many illiterate southern blacks to vote
+\item[1968] Martin Luther King assassinated in Memphis, Tennessee
+\item[2008] Barack Obama elected as President of the USA
+\end{itemize}
+\subsection{Gun laws}
+	\label{ssec:usa@guns}
+\paragraph{Gun culture in the US}
+According to reliable estimates there are about 393 million privately owned firearms in
+the USA. Around 40\% of Americans live in a household with a gun, which means that
+many gun-owners own more than one gun. The USA is the country with the highest gun
+ownership rate in the world, followed by Yemen and Switzerland.
 
-	\begin{fullpage}
-		\begin{multicols}{2}
-		\texttt{multicols}\lec{lec}{entry}  may be used in conjunction with \texttt{fullpage}. I find it useful for formatting exercises in multiple columns and it makes the text distinct from the rest of the \texttt{fullpage} environment. The \texttt{lec} environment is compatible with \texttt{multicols} but \texttt{sidenote}, \texttt{marginnote} are not.\\
+Guns have played a major role in American history, especially in the settlement of the
+continent and in the various wars that have been fought by Americans. As a means of
+self-protection and as a tool for hunting guns were vital to American settlers. In
+American popular culture, guns have often been depicted in a positive light. Just think of
+Western movies or the characters played by Arnold Schwarzenegger. At the same time
+gun ownership has for a long time been a hotly debated topic, each school shooting
+serving as a trigger of another round of discussions.
 
-		%\lipsum[1]
-		\end{multicols}
-	\end{fullpage}
+Supporters of gun ownership such as the National Rifle Association (NRA) point to the
+2nd Amendment to the Constitution and consider every attempt of the government to
+restrict gun ownership as an encroachment on their personal freedom. Claiming that
+hundreds of people use guns each year for self-defense, they believe that privately
+owned guns reduce crime rate rather than causing it. Opponents of gun ownership, on
+the other hand, point to studies that show a decline in homicides and suicides by
+firearms after the introduction of stricter gun laws. In addition they maintain that guns in
+households can easily lead to accidents or an escalation that wouldn't have happened if
+a gun hadn't been involved.
 
-	\subsection{Known Issues with Fullpage}\label{Sub: Fullpage_Issues}
+\section{Modern Media}
+	\label{sec:media}
+\subsection{Modern digital media}
+	\label{ssec:media@digital}
+\subsection{Web 2.0: opportunities and challenges}
+	\label{ssec:media@web2}
+\subsection{English as a global language}
+	\label{ssec:media@english}
 
-	\begin{remark}
-		Since the \texttt{fullpage} environment uses a \texttt{minipage}, and minipages do not work over multiple pages, one will need a new \texttt{fullpage} per page.
-	\end{remark}
-	\begin{remark}
-		If the \texttt{twoside} option is enabled in the \texttt{documentclass} header, then the \texttt{fullpage} is known to bleed out beyond the margin.
-	\end{remark}
+\section{Crooked Letter, Crooked Letter}
+	\label{sec:crookedl}
+\subsection{Ambiguity of belonging}
+	\label{ssec:crookedl@ambofbelonging}
 
-		\section{The Part Environment}\label{sec:part}
-	In the original Jhep format, the \texttt{$\backslash$part} environment is not special and is set to the default given by the article class. In \textit{NotesTeX}, the \texttt{part} environment produces the following image. Furthermore the code responsible is noted below.\\
-	\begin{fullpage}
-		{{\centering
-		\begin{tcolorbox}[width=\marginparwidth,height=\marginparwidth/2,colback=black!50!white,colframe=black!50!white,center title,fonttitle=\bfseries\normalsize,title=PART,text fill]
-		  \begin{center}
-		  {\color{white}\Huge\bfseries\#}
-		  \end{center}
-		\end{tcolorbox}
-	}}
-	\end{fullpage}
-
-
-	\begin{fullpage}
-	% {{\centering
-	% 	\begin{tcolorbox}[width=\marginparwidth,height=\marginparwidth/2,colback=black!50!white,colframe=black!50!white,center title,fonttitle=\bfseries\normalsize,title=PART,text fill]
-	% 	  \begin{center}
-	% 	  {\color{white}\Huge\bfseries\#}
-	% 	  \end{center}
-	% 	\end{tcolorbox}
-	% }}
-	% ~ \newline
-	\begin{lstlisting}
-\titleformat{\part}[hang]{{\thispagestyle{plain}}\Huge\bfseries}{\marginnote{
-	\begin{tcolorbox}
-	[width=\marginparwidth,height=\marginparwidth/2,colback=black!75!white,
-		colframe=black!75!white,center title,fonttitle=\bfseries\normalsize,title=PART,
-		text fill]
-
-		\begin{center}
-		{\color{white}\thepart}
-		\end{center}
-
-	\end{tcolorbox}
-}[-1.25in]}{0pt}{\Huge\bfseries}
-	\end{lstlisting}
-	\end{fullpage}
-
-	This combines the \texttt{titlesec} and the \texttt{tcolorbox} packages, placing the title of the \texttt{$\backslash$part} on the left hand side, and the \texttt{$\backslash$part} number in the margin.
-
-
-	\part{Advanced}
-	For those wanting to adjust the margin sizes, or the \texttt{fancyhdr} layout, there are a few comments that could be made here.
-	\section{Page Dimensions}
-	\textit{NotesTeX} relies on the \texttt{geometry} package to set its dimensions. The associated code is the deceptively simple chunk of code given by
-	\begin{lstlisting}
-\geometry{paperheight=11in,paperwidth=8.5in,
-	marginparsep=.02\paperwidth,marginparwidth=.2\paperwidth,
-	inner=.11\paperwidth,voffset=-1in,headheight=.02\paperheight,
-	headsep=.03\paperheight,footskip=20pt,
-	textheight=.795\paperheight,textwidth=.62\paperwidth}
-	\end{lstlisting}
-	Ignoring most of the arguments, the \texttt{$\backslash$paperheight} and \texttt{$\backslash$paperwidth} are set to be the standard $8.5\times11$ inches. All other options, with the exception of \texttt{$\backslash$voffset}, inherit fractions of \texttt{$\backslash$paperheight} and \texttt{$\backslash$paperwidth}, the most important being \texttt{$\backslash$marginparwidth}. Increasing \texttt{$\backslash$marginparwidth} causes the margin to bleed off of the right side of the page. In order to increase this value, \texttt{$\backslash$textwidth} must be decreased accordingly.
-
-
-	\section{\texttt{Fancyhdr} Layout}
-	As mentioned before, \texttt{fancyhdr} is overridden on the title page, the contents page, and the \texttt{$\backslash$part} page, and sets the header for all other pages through the code
-	\begin{lstlisting}
-\pagestyle{fancy}%
-\newlength{\offset}%
-\setlength{\offset}{\marginparwidth + \marginparsep}%
-\renewcommand{\sectionmark}[1]{\markboth{#1}{}}%
-\renewcommand{\subsectionmark}[1]{\markright{#1}{}}%
-
-\fancypagestyle{fancynotes}{%
-	\fancyhf{}%
-	\fancyheadoffset[rh]{\offset}%
-	\renewcommand{\headrulewidth}{0pt}%
-	\fancyhead[L]{\textsc{\leftmark}}%
-	\fancyhead[R]{\footnotesize \textit{\rightmark}~~~~ \thepage}%
-}%
-	\end{lstlisting}
-	The header style is set so that it spans the width of the entire page as opposed to just the \texttt{$\backslash$textwidth} through the line \texttt{$\backslash$fancyheadoffset[rh]\{$\backslash$myoddoffset\}}. The \texttt{$\backslash$sectionmark} and \texttt{$\backslash$subsectionmark} are set up so that the \texttt{section} appears on the left and \texttt{subsections} appear on the right along with the page number, and this is given in the last two lines of code.
-
-
-	\section{Alternative Language Integration}
-	For languages written right to left, such as Persian, it is possible to use \textit{NotesTeX}. A complied example can be found in the legacy V1 version on Github. Suggestions are welcome for a more comprehensive language integration.
-
-\section{License}\label{sec:license}
-	Aditya Dhumuntarao does not own the copyright to the original package, \texttt{jheppub.sty}. All modification have been approved by the Jhep Editorial committee, and permission has been attributed to Aditya to distribute freely the modified version of \texttt{jheppub.sty}, known as \texttt{NotesTeX.sty}.
-
-	This work may be distributed and/or modified under the conditions of the LaTeX Project Public License, either version 1.3 of this license or (at your option) any later version. The latest version of this license is found \href{http://www.latex-project.org/lppl.txt}{here}, and version 1.3 or later is part of all distributions of LaTeX version 2005/12/01 or later. The current maintainer of this work is Aditya Dhumuntarao.\footnote{Please contact me at my email if you have any questions or comments.}
 \end{document}
