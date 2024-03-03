@@ -10,7 +10,10 @@ backend=biber,
 style=alphabetic,
 sorting=ynt
 ]{biblatex}
+\allowdisplaybreaks
 
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{patterns}
 
 \begin{document}
 \title{{Mathematik}\\{\normalsize{\itshape Leistungskurs}}}
@@ -206,8 +209,9 @@ Ist eine Zufallsgröße binomialverteilt, also $B_{n,p}$-verteilt, so ist
 	\end{itemize}
 \end{definition}
 
-\section{Testen von Hypothesen}
 \newpage
+\section{Testen von Hypothesen}
+
 \subsection{Einseitiger Hypothesentest}
 \begin{example}
 Ein Betrieb bezieht Bauteile von einer Zulieferfirma. Der Betriebsleiter vermutet,
@@ -232,15 +236,15 @@ mit einem Stichprobenumfang von 200 Bauteilen auf dem Signifikanzniveau 5\% durc
 	$0,956$ & $16$ \\
 	$0,922$ & $15$ \\
 	\hline
-	\end{tabular} &\parbox{0.5\linewidth}{Per \texttt{Binomialcdf} ausprobieren; $g = 16$ ist kleinste natürliche Zahl, die das Kriterium erfüllt}\\
-&\overline A = [16;\dots;200] &\parbox[t]{0.5\linewidth}{Wenn das Stichprobenergebnis mehr als $15$ defekte Bauteile liefert, wird $H_0$ verworfen, sonst nicht.} \\
+	\end{tabular} &\parbox{0.5\linewidth}{Per \texttt{Binomialcdf} ausprobieren; $g = 16$ ist kleinste natürliche Zahl, die Kriterium erfüllt}\\
+&\overline A = [16;\dots;200] &\parbox[t]{0.5\linewidth}{Wenn das Stichprobenergebnis mehr als $15$ defekte Bauteile liefert, wird $H_0$ verworfen, sonst nicht.}
 \end{align*}
 \paragraph{b)} Geben Sie die Irrtumswahrscheinlichkeit an.
 \begin{align*}
 &1 - P^{200}_{0,05}(X \leq g - 1) \leq 0,05 &\parbox[t]{0.5\linewidth}{Fehler 1. Art berechnen} \\
-&1 - P^{200}_{0,05}(X \leq 16 - 1) \leq 0,05 &\parbox[t]{0.5\linewidth}{Gesucht ist kleinste natürliche Zahl $g$, die das Kriterium erfüllt} \\
+&1 - P^{200}_{0,05}(X \leq 16 - 1) \leq 0,05 &\parbox[t]{0.5\linewidth}{Gesucht ist kleinste natürliche Zahl $g$, die Kriterium erfüllt} \\
 &1 - 0,956 \leq 0,05 &\parbox[t]{0.5\linewidth}{} \\
-&0,044 \leq 0,05 &\parbox[t]{0.5\linewidth}{Irrtumswahrscheinlichkeit ist $0,044$} \\
+&0,044 \leq 0,05 &\parbox[t]{0.5\linewidth}{Irrtumswahrscheinlichkeit ist $0,044$}
 \end{align*}
 \end{example}
 
@@ -248,7 +252,9 @@ mit einem Stichprobenumfang von 200 Bauteilen auf dem Signifikanzniveau 5\% durc
 \begin{example}
 Bei einer leicht verbeulten Münze wird vermutet, dass \enquote{Wappen} nicht mit einer
 Wahrscheinlichkeit von 50\% fällt. Dazu soll ein Hypothesentest durchgeführt werden, bei dem
-die Münze 100-mal geworfen wird. Als Signifikanzniveau wird 5\% gewählt. Bestimmen Sie den Ablehnungsbereich und formulieren Sie die Entscheidungsregel
+die Münze 100-mal geworfen wird. Als Signifikanzniveau wird 5\% gewählt.
+
+Bestimmen Sie den Ablehnungsbereich und formulieren Sie die Entscheidungsregel
 
 \addtolength{\jot}{1em}
 \begin{align*}
@@ -257,7 +263,7 @@ die Münze 100-mal geworfen wird. Als Signifikanzniveau wird 5\% gewählt. Besti
 &n = 100; \hat\alpha = 0,05 &\parbox[t]{0.5\linewidth}{Stichprobenumfang; Signifikanzniveau} \\
 &\overline A = [0;\dots;g_1] \cup [g_2;\dots;n] &\parbox[t]{0.5\linewidth}{Ablehnungsbereich $\overline A$} \\
 &P^n_p(X \leq g_1) \leq \frac{\hat\alpha}{2} &\parbox[t]{0.5\linewidth}{Linksseitigen Test durchführen} \\
-&P^{100}_{0,5}(X \leq g_1) \leq 0,025 &\parbox[t]{0.5\linewidth}{Gesucht ist größte natürliche Zahl $g_1$, die das Kriterium erfüllt} \\
+&P^{100}_{0,5}(X \leq g_1) \leq 0,025 &\parbox[t]{0.5\linewidth}{Gesucht ist größte natürliche Zahl $g_1$, die Kriterium erfüllt} \\
 & \begin{tabular}{|c|c|}
 	\hline
 	$P^{100}_{0,5}(X \leq g_1)$ & $g_1$ \\ \hline
@@ -265,10 +271,10 @@ die Münze 100-mal geworfen wird. Als Signifikanzniveau wird 5\% gewählt. Besti
 	$0,018$ & $39$ \\
 	$0,028$ & $40$ \\
 	\hline
-	\end{tabular} &\parbox{0.5\linewidth}{Per \texttt{Binomialcdf} ausprobieren; $g_1 = 39$ ist größte natürliche Zahl, die das Kriterium erfüllt}\\
+	\end{tabular} &\parbox{0.5\linewidth}{Per \texttt{Binomialcdf} ausprobieren; $g_1 = 39$ ist größte natürliche Zahl, die Kriterium erfüllt}\\
 &P^n_p(X \geq g_2) \leq \frac{\hat\alpha}{2} &\parbox[t]{0.5\linewidth}{Rechtsseitigen Test durchführen} \\
 &1 - P^{100}_{0,5}(X \leq g_2 - 1) \leq 0,025 &\parbox[t]{0.5\linewidth}{} \\
-&P^{100}_{0,5}(X \leq g_2 - 1) \geq 0,975 &\parbox[t]{0.5\linewidth}{Gesucht ist kleinste natürliche Zahl $g_2$, die das Kriterium erfüllt} \\
+&P^{100}_{0,5}(X \leq g_2 - 1) \geq 0,975 &\parbox[t]{0.5\linewidth}{Gesucht ist kleinste natürliche Zahl $g_2$, die Kriterium erfüllt} \\
 & \begin{tabular}{|c|c|}
 	\hline
 	$P^{100}_{0,5}(X \leq g_2 - 1)$ & $g_2$ \\ \hline
@@ -276,8 +282,105 @@ die Münze 100-mal geworfen wird. Als Signifikanzniveau wird 5\% gewählt. Besti
 	$0,982$ & $61$ \\
 	$0,972$ & $60$ \\
 	\hline
-	\end{tabular} &\parbox{0.5\linewidth}{Per \texttt{Binomialcdf} ausprobieren; $g_2 = 61$ ist kleinste natürliche Zahl, die das Kriterium erfüllt}\\
-&\overline A = [0;\dots;39] \cup [61;\dots;100] &\parbox[t]{0.5\linewidth}{Wenn das Stichprobenergebnis weniger als $40$ oder mehr als $60$ mal \enquote{Wappen} liefert, wird $H_0$ verworfen, sonst nicht.} \\
+	\end{tabular} &\parbox{0.5\linewidth}{Per \texttt{Binomialcdf} ausprobieren; $g_2 = 61$ ist kleinste natürliche Zahl, die Kriterium erfüllt}\\
+&\overline A = [0;\dots;39] \cup [61;\dots;100] &\parbox[t]{0.5\linewidth}{Wenn das Stichprobenergebnis weniger als $40$ oder mehr als $60$ mal \enquote{Wappen} liefert, wird $H_0$ verworfen, sonst nicht.}
 \end{align*}
 \end{example}
+
+\newpage
+\section{Stetige Zufallsgrößen}
+\subsection{Normalverteilung}
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+\begin{example}
+Kartoffelchips werden in Tüten gefüllt. Die Masse (in Gramm) des Tüteninhalts
+ist normalverteilt mit $\mu = 250$ und $\sigma = 10$.
+
+Bestimmen Sie die Wahrscheinlichkeit, dass der Inhalt der Tüte
+\end{example}
+\paragraph{a)} eine Masse von mindestens 230g hat
+\begin{marginfigure}
+\resizebox{\linewidth}{!}{
+\begin{tikzpicture}
+\begin{axis}[every axis plot post/.append style={
+	mark=none,domain=20:30,samples=50,smooth}, % All plots: from -2:2, 50 samples, smooth, no marks
+	enlarge y limits={value=0.2,upper},
+	enlarge x limits=false,
+	ticks=none,] % extend the axes a bit to the right and top
+	\addplot+[blue,thick,name path=A] {gauss(25,1)};
+	\addplot+[draw=none,name path=B] {0};     % “fictional” curve
+	\addplot+[blue!20!white] fill between[of=A and B,soft clip={domain=23:30}]; % filling
+	\addplot[blue,dashed,thick]
+      coordinates {(23,0) (23,0.14)}
+      node[above=0pt] {$a$};
+\end{axis}
+\end{tikzpicture}
+}
+\caption{Zu Teilaufgabe a)}
+\end{marginfigure}
+\addtolength{\jot}{1em}
+\begin{align*}
+&\mu = 250; \sigma = 10 &\parbox[t]{0.5\linewidth}{Erwartungswert; Standardabweichung} \\
+&a = 230; b = \infty &\parbox[t]{0.5\linewidth}{Per \texttt{Normalcdf} ausrechnen;\\ \texttt{LOWERBnd = 230}; \texttt{UPPERBnd = 1E99}} \\
+&P(X \geq a) = \int_a^b\varphi_{\mu; \sigma}(x)dx &\parbox[t]{0.5\linewidth}{Wahrscheinlichkeit berechnen} \\
+&P(X \geq 230) = 0,977 &\parbox[t]{0.5\linewidth}{Wahrscheinlichkeit für mindestens 230g beträgt $0,997$}
+\end{align*}
+\paragraph{b)} eine Masse von weniger als 250g hat
+\begin{marginfigure}
+\resizebox{\linewidth}{!}{
+\begin{tikzpicture}
+\begin{axis}[every axis plot post/.append style={
+	mark=none,domain=20:30,samples=50,smooth}, % All plots: from -2:2, 50 samples, smooth, no marks
+	enlarge y limits={value=0.2,upper},
+	enlarge x limits=false,
+	ticks=none,] % extend the axes a bit to the right and top
+	\addplot+[blue,thick,name path=A] {gauss(25,1)};
+	\addplot+[draw=none,name path=B] {0};     % “fictional” curve
+	\addplot+[blue!20!white] fill between[of=A and B,soft clip={domain=20:25}]; % filling
+	\addplot[blue,dashed,thick]
+      coordinates {(25,0) (25,0.45)}
+      node[above=0pt] {$b$};
+\end{axis}
+\end{tikzpicture}
+}
+\caption{Zu Teilaufgabe b)}
+\end{marginfigure}
+\begin{align*}
+&\mu = 250; \sigma = 10 &\parbox[t]{0.5\linewidth}{Erwartungswert; Standardabweichung} \\
+&a = \infty; b = 250 &\parbox[t]{0.5\linewidth}{Per \texttt{Normalcdf} ausrechnen;\\ \texttt{LOWERBnd = -1E99}; \texttt{UPPERBnd = 250}} \\
+&P(X < a) = \int_a^b\varphi_{\mu; \sigma}(x)dx &\parbox[t]{0.5\linewidth}{Wahrscheinlichkeit berechnen} \\
+&P(X < 250) = 0,5 &\parbox[t]{0.5\linewidth}{Wahrscheinlichkeit für weniger als 250g beträgt $0,5$}
+\end{align*}
+\paragraph{c)} eine Masse zwischen 245g und 255g hat
+\begin{marginfigure}
+\resizebox{\linewidth}{!}{
+\begin{tikzpicture}
+\begin{axis}[every axis plot post/.append style={
+	mark=none,domain=20:30,samples=50,smooth}, % All plots: from -2:2, 50 samples, smooth, no marks
+	enlarge y limits={value=0.2,upper},
+	enlarge x limits=false,
+	ticks=none,] % extend the axes a bit to the right and top
+	\addplot+[blue,thick,name path=A] {gauss(25,1)};
+	\addplot+[draw=none,name path=B] {0};     % “fictional” curve
+	\addplot+[blue!20!white] fill between[of=A and B,soft clip={domain=24.5:25.5}]; % filling
+	\addplot[blue,dashed,thick]
+      coordinates {(24.5,0) (24.5,0.45)}
+      node[above=0pt] {$a$};
+  \addplot[blue,dashed,thick]
+      coordinates {(25.5,0) (25.5,0.45)}
+      node[above=0pt] {$b$};
+\end{axis}
+\end{tikzpicture}
+}
+\caption{Zu Teilaufgabe c)}
+\end{marginfigure}
+\begin{align*}
+&\mu = 250; \sigma = 10 &\parbox[t]{0.5\linewidth}{Erwartungswert; Standardabweichung} \\
+&a = 245; b = 255 &\parbox[t]{0.5\linewidth}{Per \texttt{Normalcdf} ausrechnen;\\ \texttt{LOWERBnd = 245}; \texttt{UPPERBnd = 255}} \\
+&P(a \leq X \leq b) = \int_a^b\varphi_{\mu; \sigma}(x)dx &\parbox[t]{0.5\linewidth}{Wahrscheinlichkeit berechnen} \\
+&P(245 \leq X \leq 255) = 0,383 &\parbox[t]{0.5\linewidth}{Wahrscheinlichkeit für mindestens 245g und höchstens 255 beträgt $0,383$}
+\end{align*}
+
+
 \end{document}

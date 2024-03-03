@@ -8,8 +8,13 @@
 \contentsline {section}{\numberline {4}Binomialverteilte Zufallsvariablen}{3}{section.4}%
 \contentsline {section}{\numberline {5}Bedingte Wahrscheinlichkeit}{4}{section.5}%
 \contentsline {section}{\numberline {6}Erwartungswert, Varianz\\ und Standardabweichung bei Binomialverteilung}{4}{section.6}%
-\contentsline {section}{\numberline {7}Testen von Hypothesen}{4}{section.7}%
+\contentsline {section}{\numberline {7}Testen von Hypothesen}{5}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Einseitiger Hypothesentest}{5}{subsection.7.1}%
 \contentsline {paragraph}{a)}{5}{example.2}%
 \contentsline {paragraph}{b)}{5}{example.2}%
 \contentsline {subsection}{\numberline {7.2}Zweiseitiger Hypothesentest}{6}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Stetige Zufallsgrößen}{7}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Normalverteilung}{7}{subsection.8.1}%
+\contentsline {paragraph}{a)}{7}{example.4}%
+\contentsline {paragraph}{b)}{7}{figure.caption.3}%
+\contentsline {paragraph}{c)}{7}{figure.caption.4}%
