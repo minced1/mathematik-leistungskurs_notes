@@ -24,7 +24,7 @@
 % ----------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{NotesTeXV3}[2021/10/22 rV3]
+\ProvidesPackage{notestex}[2021/10/22 rV3]
 
 \gdef\@fpheader{\ }
 \gdef\@journal{jhep}
@@ -32,12 +32,12 @@
 \newif\ifnotoc\notocfalse
 \newif\ifemailadd\emailaddfalse
 \newif\iftoccontinuous\toccontinuousfalse
-\newif\ifnatbibsort\natbibsorttrue
+% \newif\ifnatbibsort\natbibsorttrue
 
-\DeclareOption{no-natbib-sort}{\natbibsortfalse}
-\ProcessOptions\relax
+% \DeclareOption{no-natbib-sort}{\natbibsortfalse}
+% \ProcessOptions\relax
 
-\ifnatbibsort\RequirePackage[numbers,sort&compress]{natbib}\else\RequirePackage[numbers,compress]{natbib}\fi
+% \ifnatbibsort\RequirePackage[numbers,sort&compress]{natbib}\else\RequirePackage[numbers,compress]{natbib}\fi
 \RequirePackage[usenames, dvipsnames, hyperref]{xcolor}
 
 %% the color profile
@@ -59,17 +59,17 @@
 
 \SetColorProfile{9A3136}{9D6669}{999731}{317499}{A1B8C5}
 
-\RequirePackage[colorlinks=true
-,urlcolor=ntex@color@primary
-,anchorcolor=ntex@color@primary
-,citecolor=ntex@color@primary
-,filecolor=ntex@color@primary
-,linkcolor=ntex@color@primary
-,menucolor=ntex@color@primary
-,linktocpage=true
-,pdfproducer=medialab
-,pdfa=true
-,pdfusetitle
+\RequirePackage[colorlinks=true,
+urlcolor=ntex@color@primary,
+anchorcolor=ntex@color@primary,
+citecolor=ntex@color@primary,
+filecolor=ntex@color@primary,
+linkcolor=ntex@color@primary,
+menucolor=ntex@color@primary,
+linktocpage=true,
+pdfproducer=medialab,
+pdfa=true,
+pdfusetitle
 ]{hyperref}
 
 % ----------------------------------------------------------------------
@@ -84,24 +84,25 @@
 %           User Top Level Packages: Additional & Styling
 % ----------------------------------------------------------------------
 
-%\usepackage[T1]{fontenc}                            % Font Styling
-%\usepackage{lmodern,mathrsfs}
+                                                    % Font Styling
 \usepackage{fontspec}
-\setromanfont{TEX Gyre Pagella}
+\usepackage{microtype}
+\setromanfont{TEX Gyre Pagella}[Numbers=OldStyle]
 \setsansfont{TEX Gyre Adventor}
 \setmonofont{TEX Gyre Cursor}
 
 \usepackage{tocloft}                                % Table of contents Styling
+
 
 \usepackage[shortlabels]{enumitem}                  % Enumitem Options
 
 \usepackage{mathtools,amsthm,amssymb,amsfonts,bm}   % Math Presets
 \usepackage{thmtools,amsmath}
 \usepackage{unicode-math}
-%\setmathfont{TEX Gyre Pagella Math}
+\setmathfont{TEX Gyre Schola Math}
 
 \usepackage{array,tabularx,booktabs}                % Table Presets
-\usepackage{graphicx,wrapfig,float,caption}         % Figure Presets
+\usepackage{graphicx,wrapfig,float,caption, ccicons}         % Figure Presets
 \usepackage{setspace,multicol}                      % Text Presets
 \usepackage{tikz,physics}                           % Physics Presets
 \tikzset{
@@ -138,7 +139,7 @@ tabsize=2,
 }
 \lstdefinestyle{standalone}{
 basicstyle = \ttfamily,
-rulecolor = \color{gray!30!white},
+rulecolor = \color{gray!50!white},
 frame = leftline,
 framerule = 1pt,
 xleftmargin= 4pt,
@@ -146,7 +147,7 @@ xrightmargin= 0pt,
 numbers = left,
 numbersep = 7pt,
 numberstyle = \ttfamily\footnotesize,
-backgroundcolor=\color{gray!10!white},
+backgroundcolor=\color{gray!12!white},
 extendedchars = true,
 captionpos=b,
 keywordstyle = \bfseries\color{ntex@color@primary},
@@ -269,12 +270,12 @@ tabsize=2,
         \makebox[0pt][r]{\NAME\hspace{\marginparsep}}\hskip-\spacelength{\NOTE}},
 ]{claim}
 
-% \declaretheorem[
-%     style=proof,
-%     qed=\qedsymbol]{proof}
+\declaretheorem[
+    style=proof,
+    qed=\qedsymbol]{proof}
 
-\theoremstyle{proof}
-\newtheorem{proof}{Beweis}
+% \theoremstyle{proof}
+% \newtheorem{proof}{Beweis}
 
 \declaretheorem[style=claim]{Intuition}
 
@@ -317,13 +318,13 @@ tabsize=2,
 \newtheorem{intu}{Intuition}
 
 \theoremstyle{claim}
-\newtheorem{solu}{Lösung}
+\newtheorem{solu}{Solution}
 
 \theoremstyle{claim}
-\newtheorem{remark}{Anmerkung}
+\newtheorem{remark}{Remark}
 
 \theoremstyle{claim}
-\newtheorem{example}{Beispiel}
+\newtheorem{example}{Example}
 \tcolorboxenvironment{example}{
   boxrule=0pt,
   boxsep=0pt,
@@ -362,6 +363,9 @@ tabsize=2,
 \def\@proceeding{\@empty}
 \def\@preprint{\@empty}
 \def\@acknowledgments{\@empty}
+\def\@license{\@empty}
+\def\@licenseIcon{\@empty}
+
 
 \newcommand{\fakeparagraph}[1]{\textbf{\sffamily {#1}}\hspace{1.75ex}}
 \newcommand{\subheader}[1]{\gdef\@subheader{#1}}
@@ -378,6 +382,15 @@ tabsize=2,
 %\newcommand\acknowledgments{\section*{Acknowledgments}}
 \newcommand\notoc{\notoctrue}
 \newcommand\preprint[1]{\gdef\@preprint{\hfill #1}}
+\newcommand\license[2]{\gdef\@license{#1}\gdef\@licenseIcon{#2}}
+\newcommand\printntexbibliography{
+\newpage
+\pagestyle{empty}
+\newgeometry{marginparwidth=0pt,marginparsep=0pt,textwidth=.8\paperwidth,hoffset=0in,voffset=0in}
+{\color{ntex@color@primary}\hrule height .6pt}
+\printbibliography
+{\color{ntex@color@primary}\hrule height .6pt}
+}
 
 
 
@@ -466,82 +479,7 @@ tabsize=2,
 %this hook is needed if the toc starts on the first page
 \newcommand\beforetochook{\pagestyle{myplain}\pagenumbering{roman}}
 
-\DeclareFixedFont\trfont{OT1}{phv}{b}{sc}{11}
-
-%first page
-\renewcommand\maketitle{
-%% First page
-\pagestyle{empty}
-\thispagestyle{titlepage}
-\newgeometry{marginparwidth=0pt,marginparsep=0pt,textwidth=.8\paperwidth,hoffset=0in,voffset=0in}
-\setcounter{page}{0}
-\noindent{\small\scshape\@fpheader}\@preprint\par
-\afterLogoSpace
-% Subheader
-\if!\@subheader!\else\noindent{\trfont{\@subheader}}\fi
-\afterSubheaderSpace
-% Proceedings
-\if!\@proceeding!\else\noindent{\scshape\@proceeding}\fi
-\afterProceedingsSpace
-% Title
-{\huge\centering\sffamily\bfseries\scshape\@title\par}
-\afterTitleSpace
-% Rule
-{\color{ntex@color@primary}\hrule height .6\p@}%
-\afterRuleSpace
-% Collaboration
-\if!\@collaboration!\else
-{\Large\bfseries\sffamily\raggedright\@collaboration}\par
-\afterCollaborationSpace
-\fi
-%
-\if!\@collaborationImg!\else
-{\normalsize\bfseries\sffamily\raggedright\@collaborationImg}\par
-\afterCollaborationImgSpace
-%% I leave the size and font so that if there are two collaboration
-%% they can be linked with an 'and'
-\fi
-% Author
-%{\bfseries\raggedright\sffamily\the\auth@toks\par}
-{\bfseries\raggedright\scshape\the\auth@toks\par}
-\afterAuthorSpace
-% Affiliation
-\ifaffil\begin{list}{}{%
-\setlength{\leftmargin}{0.28cm}%
-\setlength{\labelsep}{0pt}%
-\setlength{\itemsep}{\affiliationsSep}%
-\setlength{\topsep}{-\parskip}}
-\itshape\small%
-\the\affil@toks
-\end{list}\fi
-\afterAffiliationSpace
-% E-mail
-\ifemailadd %% if emailadd is true
-\noindent\hspace{0.28cm}\begin{minipage}[l]{.9\textwidth}
-\begin{flushleft}
-%\textit{E-mail:} \the\email@toks
-\the\email@toks
-\end{flushleft}
-\end{minipage}
-\else %% if emailaddfalse do nothing
-\PackageWarningNoLine{\jname}{E-mails are missing.\MessageBreak Please use \protect\emailAdd\space macro to provide e-mails.}
-\fi
-\afterEmailSpace
-%Erratum or addendum
-\if!\@xtum!\else\noindent{\@xtum}\afterXtumSpace\fi
-% Abstract
-%\if!\@abstract!\else\noindent{\renewcommand\baselinestretch{.9}\textsc{Abstract:}}\ \@abstract\afterAbstractSpace\fi
-\if!\@abstract!\else\noindent\@abstract\afterAbstractSpace\fi
-% Keywords
-\if!\@keywords!\else\noindent{\textsc{Keywords:}} \@keywords\afterKeywordsSpace\fi
-% Arxivnumber
-\if!\@arxivnumber!\else\noindent{\textsc{ArXiv ePrint:}} \href{http://arxiv.org/abs/\@arxivnumber}{\@arxivnumber}\afterArxivSpace\fi
-% Dedication
-\if!\@dedicated!\else\vbox{\small\it\raggedleft\@dedicated}\afterDedicatedSpace\fi
-%
-\ifnotoc\else
-\iftoccontinuous\else\newpage\fi
-\beforetochook{\color{ntex@color@primary}\hrule height .6\p@}%
+% \DeclareFixedFont\trfont{OT1}{phv}{b}{sc}{11}
 
 \renewcommand{\cfttoctitlefont}{\Large\sffamily\bfseries}
 
@@ -567,12 +505,96 @@ tabsize=2,
 \renewcommand{\cftsubsecpagefont}{\footnotesize\sffamily}
 \renewcommand{\cftsubsecdotsep}{\cftnodots}
 
+%first page
+\renewcommand\maketitle{
+%% First page
+\pagestyle{empty}
+\thispagestyle{titlepage}
+\newgeometry{marginparwidth=0pt,marginparsep=0pt,textwidth=.8\paperwidth,hoffset=0in,voffset=0in}
+\setcounter{page}{0}
+\noindent{\small\scshape\@fpheader}\@preprint\par
+\afterLogoSpace
+% Subheader
+\if!\@subheader!\else\noindent{\large\sffamily\bfseries\scshape{\@subheader}}\fi
+\afterSubheaderSpace
+% Proceedings
+\if!\@proceeding!\else\noindent{\scshape\@proceeding}\fi
+\afterProceedingsSpace
+% Title
+{\huge\centering\sffamily\bfseries\scshape\@title\par}
+\afterTitleSpace
+% Rule
+{\color{ntex@color@primary}\hrule height .6pt}%
+\afterRuleSpace
+% Collaboration
+\if!\@collaboration!\else
+{\Large\bfseries\sffamily\raggedright\@collaboration}\par
+\afterCollaborationSpace
+\fi
+%
+\if!\@collaborationImg!\else
+{\normalsize\bfseries\sffamily\raggedright\@collaborationImg}\par
+\afterCollaborationImgSpace
+%% I leave the size and font so that if there are two collaboration
+%% they can be linked with an 'and'
+\fi
+% Author
+%{\bfseries\raggedright\sffamily\the\auth@toks\par}
+{\sffamily\bfseries\raggedright\scshape\the\auth@toks\par}
+\afterAuthorSpace
+% Affiliation
+\ifaffil\begin{list}{}{%
+\setlength{\leftmargin}{0.28cm}%
+\setlength{\labelsep}{0pt}%
+\setlength{\itemsep}{\affiliationsSep}%
+\setlength{\topsep}{-\parskip}}
+\sffamily\small%
+\the\affil@toks
+\end{list}\fi
+\afterAffiliationSpace
+% E-mail
+\ifemailadd %% if emailadd is true
+\noindent\hspace{0.28cm}\begin{minipage}[l]{.9\textwidth}
+\begin{flushleft}
+%\textit{E-mail:} \the\email@toks
+\the\email@toks
+\end{flushleft}
+\end{minipage}
+\else %% if emailaddfalse do nothing
+\PackageWarningNoLine{\jname}{E-mails are missing.\MessageBreak Please use \protect\emailAdd\space macro to provide e-mails.}
+\fi
+\afterEmailSpace
+%Erratum or addendum
+\if!\@xtum!\else\noindent{\@xtum}\afterXtumSpace\fi
+% Abstract
+%\if!\@abstract!\else\noindent{\renewcommand\baselinestretch{.9}\textsc{Abstract:}}\ \@abstract\afterAbstractSpace\fi
+\if!\@abstract!\else\noindent\@abstract\afterAbstractSpace\fi
+% Keywords
+\if!\@keywords!\else\noindent{\textsc{\sffamily Keywords:}} \@keywords\afterKeywordsSpace\fi
+% Arxivnumber
+\if!\@arxivnumber!\else\noindent{\textsc{ArXiv ePrint:}} \href{http://arxiv.org/abs/\@arxivnumber}{\@arxivnumber}\afterArxivSpace\fi
+% Dedication
+\if!\@dedicated!\else\vbox{\small\itshape\raggedleft\@dedicated}\afterDedicatedSpace\fi
+% License
+\if!\@license!\else\noindent{
+\begin{center}
+\vfill
+\Huge \@licenseIcon\\
+\vspace{5pt}
+\normalsize\sffamily \@license
+\end{center}
+}\fi
+
+\ifnotoc\else
+\iftoccontinuous\else\newpage\fi
+\beforetochook{\color{ntex@color@primary}\hrule height .6pt}%
+
 \tableofcontents
 \afterTocSpace
-{\color{ntex@color@primary}\hrule height .6\p@}%
+{\color{ntex@color@primary}\hrule height .6pt}%
 \afterTocRuleSpace
 \fi
-%\if!\@acknowledgments!\else\vfill\noindent{\renewcommand\baselinestretch{.9}\textsc{Acknowledgments:}}\ \@acknowledgments\afterAbstractSpace\fi
+\if!\@acknowledgments!\else\vfill\noindent{\renewcommand\baselinestretch{.9}\textsc{\sffamily Acknowledgments:}}\ \@acknowledgments\afterAbstractSpace\fi
 \setcounter{footnote}{0}
 \restoregeometry
 \pagestyle{myplain}\pagenumbering{arabic}
@@ -580,10 +602,10 @@ tabsize=2,
 
 % Page layout
 \renewcommand{\baselinestretch}{1.0}\normalsize
-\setlength\lineskip{1\p@}
+\setlength\lineskip{1pt}
 \setlength\parindent{1.2\parindent}
-\setlength\normallineskip{1\p@}
-\setlength\parskip{0\p@ \@plus \p@}
+\setlength\normallineskip{1pt}
+\setlength\parskip{0pt \@plus 1pt}
 \@lowpenalty   51
 \@medpenalty  151
 \@highpenalty 301
@@ -599,17 +621,17 @@ tabsize=2,
 \renewcommand\floatpagefraction{1}
 \addtolength\textheight{\topskip}
 
-\marginparpush 6\p@
+\marginparpush 6pt
 \topmargin   .05\paperheight
 
-\setlength\arraycolsep{2\p@}
-\setlength\tabcolsep{6\p@}
-\setlength\arrayrulewidth{.4\p@}
-\setlength\doublerulesep{2\p@}
+\setlength\arraycolsep{2pt}
+\setlength\tabcolsep{6pt}
+\setlength\arrayrulewidth{.4pt}
+\setlength\doublerulesep{2pt}
 \setlength\tabbingsep{\labelsep}
 \skip\@mpfootins = \skip\footins
-\setlength\fboxsep{3\p@}
-\setlength\fboxrule{.4\p@}
+\setlength\fboxsep{3pt}
+\setlength\fboxrule{.4pt}
 
 % No dots in the table of contents
 %\renewcommand{\@dotsep}{10000}
@@ -662,7 +684,7 @@ tabsize=2,
 
 \titleformat{name=\section}[display]
 {\sffamily}
-{\footnotesize\textsc{Sektion \thesection}}
+{\footnotesize\textsc{Section \thesection}}
 {0pt}
 {\Large\bfseries}
 [\vspace{-10pt}\color{ntex@color@primary}\rule{\textwidth}{.6pt}]
@@ -675,7 +697,7 @@ tabsize=2,
 
 \titleformat{name=\subsection}[display]
 {\sffamily}
-{\footnotesize\textsc{Subsektion \thesubsection}}
+{\footnotesize\textsc{Subsection \thesubsection}}
 {0pt}
 {\large\bfseries}
 [\vspace{-5pt}\color{ntex@color@primary}\rule{\textwidth}{.6pt}]
@@ -715,14 +737,14 @@ tabsize=2,
 
 %apply some formatting on the biblio
 %without redefining the whole env
-\let\oldthebibliography=\thebibliography
-\let\endoldthebibliography=\endthebibliography
-\renewenvironment{thebibliography}[1]{%
-\begin{oldthebibliography}{#1}%
-\small%
-\raggedright%
-\setlength{\itemsep}{5pt plus 0.2ex minus 0.05ex}%
-}%
-{%
-\end{oldthebibliography}%
-}
+% \let\oldthebibliography=\thebibliography
+% \let\endoldthebibliography=\endthebibliography
+% \renewenvironment{thebibliography}[1]{%
+% \begin{oldthebibliography}{#1}%
+% \small%
+% \raggedright%
+% \setlength{\itemsep}{5pt plus 0.2ex minus 0.05ex}%
+% }%
+% {%
+% \end{oldthebibliography}%
+% }

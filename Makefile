@@ -1,3 +1,4 @@
+.SILENT:
 build:
 	if arara main.tex; then \
 		echo pdf generated; \

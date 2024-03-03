@@ -1,5 +1,5 @@
-# englisch-leistungskurs_notes
-Dieses Dokument beinhaltet Notizen und Lernunterlagen für den Leistungskurs Englisch. Es ist nicht
+# mathematik-leistungskurs_notes
+Dieses Dokument beinhaltet Notizen und Lernunterlagen für den Leistungskurs Mathematik. Es ist nicht
 für den öffentlichen Gebrauch gedacht und ich übernehme keine Haftung für
 verkackte Prüfungen.
 
@@ -22,7 +22,7 @@ $ make install
 This step is optional. The file ```main.pdf``` is the same document.
 
 ## Documentation
-The document is built with the [NotesTeX](https://github.com/minced1/NotesTeX) class
+The document is built with the [notestex](https://github.com/minced1/NotesTeX) class
 which in turn is a modification of the [NotesTeX](https://github.com/Adhumunt/NotesTeX) class by Adhumunt.
 
 The major changes I have made are:
